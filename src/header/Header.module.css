@@ -11,14 +11,14 @@
 
 .TitleSm {
   position: absolute;
-  top: 18%;
+  top: 10%;
   font-size: 20px;
   z-index: 10;
 }
 
 .TitleLg {
   position: absolute;
-  top: 20%;
+  top: 12%;
   font-size: 80px;
   z-index: 999;
 }
@@ -26,7 +26,7 @@
 .image {
   width: 100%;
   height: 450px;
-  margin-top: 40px;
+  margin-top: 30px;
   object-fit: cover;
   opacity: 0.6;
 }
