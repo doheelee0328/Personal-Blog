@@ -1,6 +1,6 @@
-import styles from "./post.module.css";
+import styles from './post.module.css'
 const Posts = () => {
-  return <div className={styles.post}>post</div>;
-};
+  return <div className={styles.post}>posts</div>
+}
 
-export default Posts;
+export default Posts
