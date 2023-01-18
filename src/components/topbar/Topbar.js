@@ -1,5 +1,5 @@
 import './Topbar.css'
-import img from '../image/me.jpeg'
+import img from '../../image/me.jpeg'
 import SocialMedia from '../icons /SocialMedia'
 const Topbar = () => {
   return (
@@ -12,6 +12,7 @@ const Topbar = () => {
           <li className='item'>Home</li>
           <li className='item'>About</li>
           <li className='item'>Contact</li>
+          <li className='item'>Goal</li>
           <li className='item'>Logout</li>
         </ul>
       </div>

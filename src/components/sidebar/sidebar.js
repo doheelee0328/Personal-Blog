@@ -1,12 +1,12 @@
 import styles from './sidebar.module.css'
-import image from '../image/aboutMe.jpeg'
+import image from '../../image/aboutMe.jpeg'
 import SocialMedia from '../icons /SocialMedia'
 const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebarItem}>
         <span className={styles.sidebarTitle}>About me</span>
-        <img src={image} alt='about-me' />
+        <img className={styles.me} src={image} alt='about-me' />
         <p className={styles.sidebarParagraph}>
           Hello, my name is Dohee Lee and i am an aviation management graduate.
           I am still a beginner in coding, therefore, i am always open to learn
@@ -20,7 +20,7 @@ const Sidebar = () => {
           <li className={styles.sidebarListItem}>Music</li>
           <li className={styles.sidebarListItem}>Style</li>
           <li className={styles.sidebarListItem}>Hobbies</li>
-          <li className={styles.sidebarListItem}>Tech</li>
+          <li className={styles.sidebarListItem}>Goals</li>
           <li className={styles.sidebarListItem}>Food</li>
         </ul>
       </div>

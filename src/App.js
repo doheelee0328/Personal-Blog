@@ -1,12 +1,15 @@
-import Topbar from "./topbar/Topbar";
-import HomePage from "./pages/homepage/Homepage";
+import Topbar from './components/topbar/Topbar'
+import HomePage from './components/pages/homepage/Homepage'
+// import SinglePost from './components/pages/homepage/Single/SinglePost'
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Topbar></Topbar>
       <HomePage></HomePage>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+//      <HomePage></HomePage>
+// <SinglePost></SinglePost>
