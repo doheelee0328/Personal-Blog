@@ -5,7 +5,10 @@
   top: 0;
   display: flex;
   align-items: center;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  z-index: 999;
+  background-color: white;
+  letter-spacing: 1px;
 }
 
 .topLeft,
@@ -28,6 +31,7 @@
   width: 35px;
   height: 40px;
   border-radius: 50%;
+  margin-top: 8px;
 }
 
 .topList {
@@ -43,6 +47,28 @@
   font-size: 18px;
   font-weight: 300;
   cursor: pointer;
+  position: relative;
+  margin: 1px;
+}
+
+.item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.6px;
+  background-color: black;
+  width: 100%;
+  height: 1px;
+  margin: 2px;
+  left: 0;
+  margin-left: 0%;
+  transform: scale(0.1);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.item:hover::after {
+  transform: scale(1, 1);
 }
 
 .search-icon {
