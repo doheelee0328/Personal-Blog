@@ -1,9 +1,11 @@
+import { SocialMediaItems } from './SocialMedia.styled'
+
 const SocialMedia = () => {
   return (
     <>
-      <i className='top-icon fa-brands fa-square-facebook'></i>
-      <i className='top-icon fa-brands fa-instagram'></i>
-      <i className='top-icon fa-brands fa-twitter'></i>
+      <SocialMediaItems className='top-icon fa-brands fa-square-facebook'></SocialMediaItems>
+      <SocialMediaItems className='top-icon fa-brands fa-instagram'></SocialMediaItems>
+      <SocialMediaItems className='top-icon fa-brands fa-twitter'></SocialMediaItems>
     </>
   )
 }

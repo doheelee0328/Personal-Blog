@@ -1,17 +1,18 @@
-import styles from './Header.module.css'
+import { HeaderWrapper, Title, TitleSm, TitleLg, Image } from './Header.styled'
 const Header = () => {
   return (
-    <div className={styles.header}>
-      <div className={styles.title}>
-        <span className={styles.TitleSm}>React</span>
-        <span className={styles.TitleLg}>Dohee's Blog</span>
-      </div>
-      <img
-        src='https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg'
-        className={styles.image}
-        alt='background'
-      ></img>
-    </div>
+    <HeaderWrapper>
+      <Title>
+        <TitleSm>React</TitleSm>
+        <TitleLg>Dohee's Blog</TitleLg>
+      </Title>
+      <Image>
+        <img
+          src='https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg'
+          alt='background'
+        ></img>
+      </Image>
+    </HeaderWrapper>
   )
 }
 

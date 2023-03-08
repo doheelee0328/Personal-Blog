@@ -1,26 +1,35 @@
-import './Topbar.css'
 import img from '../../image/me.jpeg'
 import SocialMedia from '../icons /SocialMedia'
-const Topbar = () => {
+import {
+  TopItems,
+  TopWrapper,
+  Image,
+  SearchIcon,
+  TopList,
+  Items,
+} from './TopBar.styled'
+const Topbar = ({ displayItem }) => {
   return (
-    <div className='top'>
-      <div className='topLeft'>
+    <TopWrapper>
+      <TopItems>
         <SocialMedia></SocialMedia>
-      </div>
-      <div className='topCenter'>
-        <ul className='topList'>
-          <li className='item'>Home</li>
-          <li className='item'>About</li>
-          <li className='item'>Contact</li>
-          <li className='item'>Goal</li>
-          <li className='item'>Logout</li>
-        </ul>
-      </div>
-      <div className='topRight'>
-        <img src={img} alt='me' className='topImage'></img>
-        <i className='search-icon fa-solid fa-magnifying-glass'></i>
-      </div>
-    </div>
+      </TopItems>
+      <TopItems>
+        <TopList>
+          <Items>Home</Items>
+          <Items>About</Items>
+          <Items>Contact</Items>
+          <Items>Goal</Items>
+          <Items>{displayItem}</Items>
+        </TopList>
+      </TopItems>
+      <TopItems>
+        <Image>
+          <img src={img} alt='me' className='topImage'></img>
+        </Image>
+        <SearchIcon className='search-icon fa-solid fa-magnifying-glass'></SearchIcon>
+      </TopItems>
+    </TopWrapper>
   )
 }
 

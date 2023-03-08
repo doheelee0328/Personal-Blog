@@ -1,15 +1,21 @@
 import Topbar from './components/topbar/Topbar'
-import HomePage from './components/pages/homepage/Homepage'
-// import SinglePost from './components/pages/homepage/Single/SinglePost'
+// import Update from './pages/homepage/write/Update'
+// import SinglePosts from './pages/homepage/single/SinglePosts'
+import HomePage from './pages/homepage/Homepage'
+import LoginPage from './pages/login/LoginPage'
+// import LoginPage from './pages/login/LoginPage'
 function App() {
   return (
     <div className='App'>
-      <Topbar></Topbar>
-      <HomePage></HomePage>
+      <LoginPage></LoginPage>
     </div>
   )
 }
 
 export default App
 //      <HomePage></HomePage>
-// <SinglePost></SinglePost>
+//   <Write></Write>
+/*
+ <Topbar displayItem='Login'></Topbar>
+      <HomePage></HomePage>
+*/

@@ -5,7 +5,7 @@ import Hobbies from '../../image/Hobbies.jpeg'
 import Food from '../../image/Food.jpeg'
 import Tech from '../../image/Tech.jpeg'
 
-import PostList from './postlist'
+import PostList from './Postlist'
 const PostInfo = () => {
   const info = [
     {
@@ -14,8 +14,6 @@ const PostInfo = () => {
       categories: 'Life',
       title: 'Story about my life',
       postDate: '1 hour ago',
-      description:
-        'I am originally from South Korea and moved to UK when i was 12 years old',
     },
     {
       id: 'post2',

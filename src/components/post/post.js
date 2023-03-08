@@ -1,17 +1,26 @@
-import styles from './post.module.css'
-
+// import styles from './post.module.css'
+import {
+  PostWrapper,
+  ImageWrapper,
+  PostInfo,
+  PostDate,
+  PostTitle,
+  PostCategories,
+} from './Post.styled'
 const Post = ({ image, categories, title, postDate }) => {
   return (
-    <div className={styles.post}>
-      <img className={styles.image} src={image} alt='post' />
-      <div className={styles.postInfo}>
-        <div className={styles.postCategories}>
-          <div className={styles.postCategories}>{categories}</div>
-        </div>
-        <div className={styles.postTitle}>{title}</div>
-        <div className={styles.postdate}>{postDate}</div>
-      </div>
-    </div>
+    <PostWrapper>
+      <ImageWrapper>
+        <img className='image' src={image} alt='post' />
+      </ImageWrapper>
+      <PostInfo>
+        <PostCategories>
+          <PostCategories>{categories}</PostCategories>
+        </PostCategories>
+        <PostTitle>{title}</PostTitle>
+        <PostDate>{postDate}</PostDate>
+      </PostInfo>
+    </PostWrapper>
   )
 }
 
