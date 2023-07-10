@@ -1,6 +1,6 @@
 # My blog
 
-## client
+## Client
 
 ### How to Run the Client Server
 
