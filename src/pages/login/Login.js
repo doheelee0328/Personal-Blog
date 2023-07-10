@@ -1,6 +1,12 @@
 import login from '../../image/Login.webp'
+
 import { LoginWrapper, Form } from './Login.styled'
-const Login = () => {
+import { Link, useNavigate } from 'react-router-dom'
+const Login = ({ registerLink }) => {
+  const navigate = useNavigate()
+  const navigateRegister = () => {
+    navigate('/register')
+  }
   return (
     <LoginWrapper login={login}>
       <Form>
@@ -10,7 +16,10 @@ const Login = () => {
         <label>Password</label>
         <input type='password' name='password'></input>
         <button type='submit'>Login</button>
-        <button type='submit'>Register</button>
+        <p>New user?</p>
+        <Link to='/register'>
+          <button onClick={registerLink}>Register</button>
+        </Link>
       </Form>
     </LoginWrapper>
   )

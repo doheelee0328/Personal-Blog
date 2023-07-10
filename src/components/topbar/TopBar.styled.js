@@ -55,6 +55,11 @@ export const Items = styled.li`
   :hover::after {
     transform: scale(1, 1);
   }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `
 
 export const Image = styled.div`
