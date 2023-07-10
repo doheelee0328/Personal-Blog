@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 
 export const WriteWrapper = styled.div`
-  padding: 50px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `
 export const WriteForm = styled.form`
   position: relative;
@@ -10,7 +14,6 @@ export const WriteForm = styled.form`
   margin-top: 10px;
 `
 export const WriteFormGroup = styled.div`
-  margin-left: 100px;
   display: flex;
   align-items: center;
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const SideBarWrapper = styled.div`
-  flex: 3;
-  margin: 10px;
+  /* flex: 2; */
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ export const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   .me {
-    width: 40%;
+    width: 80%;
     border-radius: 20px;
     margin-bottom: 14px;
   }

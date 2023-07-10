@@ -29,7 +29,7 @@ export const TopList = styled.ul`
   padding: 0;
 `
 
-export const Items = styled.li`
+export const Items = styled.span`
   font-size: 18px;
   font-weight: 300;
   cursor: pointer;
@@ -69,11 +69,4 @@ export const Image = styled.div`
     border-radius: 50%;
     margin-top: 8px;
   }
-`
-
-export const SearchIcon = styled.i`
-  font-size: 18px;
-  color: #666;
-  cursor: pointer;
-  margin-left: 15px;
 `

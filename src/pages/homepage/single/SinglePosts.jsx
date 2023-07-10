@@ -8,7 +8,7 @@ const SinglePosts = () => {
   return (
     <SinglePostWrapper>
       <SinglePostStyle></SinglePostStyle>
-      <Sidebar></Sidebar>
+      <Sidebar />
     </SinglePostWrapper>
   )
 }

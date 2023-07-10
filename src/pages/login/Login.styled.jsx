@@ -10,7 +10,7 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: translate(250px, 50px);
-  width: 60%;
-  height: 70%;
+  margin: auto;
+  width: 50%;
+  height: 80%;
 `

@@ -4,6 +4,7 @@ export const PostWrapper = styled.div`
   flex: 9;
   margin: 20px;
   display: inline-block;
+  padding-left: 30px;
 `
 
 export const ImageWrapper = styled.div`

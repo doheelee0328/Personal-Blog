@@ -1,28 +1,16 @@
 import img from '../../image/me.jpeg'
 import SocialMedia from '../icons /SocialMedia'
-import { useState } from 'react'
-import {
-  TopItems,
-  TopWrapper,
-  Image,
-  SearchIcon,
-  TopList,
-  Items,
-} from './TopBar.styled'
+import { TopItems, TopWrapper, Image, TopList, Items } from './TopBar.styled'
 import { NavLink, Outlet, Link } from 'react-router-dom'
+import Form from '../Form/Form'
 
-const Topbar = ({ activeRegister, registerLink }) => {
-  const [activeSearch, setActiveSearch] = useState(true)
+const Topbar = ({ activeRegister }) => {
   const activeStyle = {
     textDecoration: 'underline',
     color: 'black',
   }
 
   const navLink = ({ isActive }) => (isActive ? activeStyle : undefined)
-
-  const activeSearchHanlder = () => {
-    setActiveSearch(false)
-  }
 
   return (
     <>
@@ -58,10 +46,10 @@ const Topbar = ({ activeRegister, registerLink }) => {
         <TopItems>
           <Link to='profile'>
             <Image>
-              <img src={img} alt='me' className='topImage'></img>
+              <img src={img} alt='me' className='topImage' />
             </Image>
           </Link>
-          <SearchIcon className='search-icon fa-solid fa-magnifying-glass'></SearchIcon>
+          <Form />
         </TopItems>
       </TopWrapper>
       <Outlet />

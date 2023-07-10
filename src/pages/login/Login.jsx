@@ -1,12 +1,8 @@
 import login from '../../image/Login.webp'
 
 import { LoginWrapper, Form } from './Login.styled'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const Login = ({ registerLink }) => {
-  const navigate = useNavigate()
-  const navigateRegister = () => {
-    navigate('/register')
-  }
   return (
     <LoginWrapper login={login}>
       <Form>
