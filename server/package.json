@@ -8,6 +8,7 @@
     "mongodb": "^5.7.0",
     "mongoose": "^7.3.2",
     "moongoose": "^0.0.5",
+    "supertest": "^6.3.3",
     "validator": "^13.9.0"
   },
   "name": "server",
