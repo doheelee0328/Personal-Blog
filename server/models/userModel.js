@@ -30,7 +30,9 @@ userSchema.statics.signup = async function (name, email, password) {
     throw new Error('Email is not valid')
   }
   if (!validator.isStrongPassword(password)) {
-    throw new Error('Password not strong enough')
+    throw new Error(
+      'Password not strong enough! Must either contain special characters, capital letters or numbers '
+    )
   }
   // must use function as you are using the this keyword
   const exists = await this.findOne({ email })
@@ -52,8 +54,30 @@ userSchema.statics.signup = async function (name, email, password) {
   return user
 }
 
+// to see if the password matches the hash password stored in the database
+
+userSchema.methods.matchPassword = async function (confirmPassword) {
+  return await bcrpyt.compare(confirmPassword, this.password)
+}
+
 // static login method
 
-userSchema.statics.login = async function (req, res) {}
+userSchema.statics.login = async function (email, password) {
+  if (!email || !password) {
+    throw new Error('All fields must be filled')
+  }
+  const user = await this.findOne({ email })
+  // if this exists
+  if (!user) {
+    throw new Error('Incorrect Email')
+  }
+  // to check if it exists
+
+  const match = await bcrpyt.compare(password, user.password)
+  if (!match) {
+    throw new Error('Incorrect Password')
+  }
+  return user
+}
 
 module.exports = mongoose.model('User', userSchema)
