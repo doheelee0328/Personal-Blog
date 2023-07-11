@@ -41,7 +41,7 @@ const Write = ({ updateList }) => {
             type='text'
             placeholder='Tell me your stories....'
             value={title}
-            onChange={TitleHandler}
+            onChange={TitleHandler} 
             autoFocus={true}
             className='writeInput'
             style={{ fontSize: '30px', width: '100vh' }}
@@ -52,6 +52,6 @@ const Write = ({ updateList }) => {
       </WriteForm>
     </WriteWrapper>
   )
-}
+} 
 
 export default Write
