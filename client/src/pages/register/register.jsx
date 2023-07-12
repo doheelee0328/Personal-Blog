@@ -3,8 +3,10 @@ import login from '../../image/Login.webp'
 
 import { LoginWrapper, Form } from '../login/Login.styled'
 import { Link } from 'react-router-dom'
+import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector'
 
 const Register = ({ registerLink }) => {
+  const { email, name, password } = useSelector((state) => state)
   return (
     <LoginWrapper login={login}>
       <Form>

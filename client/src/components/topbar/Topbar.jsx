@@ -2,7 +2,7 @@ import img from '../../image/me.jpeg'
 import SocialMedia from '../icons /SocialMedia'
 import { TopItems, TopWrapper, Image, TopList, Items } from './TopBar.styled'
 import { NavLink, Outlet, Link } from 'react-router-dom'
-import Form from '../Form/Form'
+import Form from '../form/Form'
 
 const Topbar = ({ activeRegister }) => {
   const activeStyle = {
