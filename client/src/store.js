@@ -1,7 +1,11 @@
-import { legacy_createStore as createStore } from 'redux'
-import { userReducer } from './reducer'
-import { devToolsEnhancer } from 'redux-devtools-extension'
+import { legacy_createStore as createStore, combineReducers } from 'redux'
+import { userReducer, tokenReducer } from './reducer'
+// import { devToolsEnhancer } from 'redux-devtools-extension'
 
-const store = createStore(userReducer, devToolsEnhancer())
+const rootReducer = combineReducers({
+  user: userReducer,
+  token: tokenReducer,
+})
 
+const store = createStore(rootReducer)
 export default store

@@ -9,12 +9,14 @@ export const PostWrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   .image {
-    width: 100%;
+    width: 400px;
     height: 280px;
     object-fit: cover;
     border-radius: 8px;
     margin-top: 20px;
     cursor: pointer;
+    display: block;
+    margin: auto;
   }
 
   .image:hover {

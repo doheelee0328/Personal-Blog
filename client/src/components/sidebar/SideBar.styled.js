@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const SideBarWrapper = styled.div`
-  /* flex: 2; */
   margin: 20px;
   display: flex;
   flex-direction: column;
