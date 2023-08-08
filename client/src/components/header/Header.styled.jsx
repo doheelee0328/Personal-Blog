@@ -13,12 +13,12 @@ export const Title = styled.div`
   margin-top: 10px;
 `
 
-export const TitleSm = styled.span`
-  position: absolute;
-  top: 14%;
-  font-size: 28px;
-  z-index: 10;
-`
+// export const TitleSm = styled.span`
+//   position: absolute;
+//   top: 14%;
+//   font-size: 28px;
+//   z-index: 10;
+// `
 
 export const TitleLg = styled.span`
   position: absolute;

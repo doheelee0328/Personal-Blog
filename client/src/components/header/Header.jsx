@@ -1,9 +1,8 @@
-import { HeaderWrapper, Title, TitleSm, TitleLg, Image } from './Header.styled'
+import { HeaderWrapper, Title, TitleLg, Image } from './Header.styled'
 const Header = () => {
   return (
     <HeaderWrapper>
       <Title>
-        <TitleSm>React</TitleSm>
         <TitleLg>Dohee's Blog</TitleLg>
       </Title>
       <Image>

@@ -1,41 +1,15 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useAuthContext } from './useAuthContext'
-import { toast } from 'react-toastify'
+import { useToastMessage } from '../context/Toast'
 import { useNavigate } from 'react-router-dom'
 import './Toast.css'
 
 export const useRegister = () => {
-  // const [error, setError] = useState('')
   const [spinner, setSpinner] = useState(false)
   const { dispatch } = useAuthContext()
+  const { successMessage, errorMessage } = useToastMessage()
   const navigate = useNavigate()
-
-  const errorMessage = (message) => {
-    toast.error(message, {
-      position: toast.POSITION.TOP_CENTER,
-      className: 'custom-toast-container',
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    })
-  }
-
-  const successMessage = (message) => {
-    toast.success(message, {
-      position: 'top-center',
-      className: 'custom-toast-container',
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    })
-  }
 
   const register = async (name, email, password) => {
     setSpinner(true)
