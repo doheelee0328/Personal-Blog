@@ -23,7 +23,7 @@ const Topbar = ({ activeRegister }) => {
   const handleClickLogout = () => {
     logout()
     successMessage('You logged out successfully')
-    navigate('/register')
+    navigate('/login')
   }
 
   return (

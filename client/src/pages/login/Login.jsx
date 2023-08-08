@@ -1,8 +1,13 @@
-import login from '../../image/Login.webp'
+import loginImage from '../../image/Login.webp'
 import { LoginWrapper, Form } from './Login.styled'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { setEmail, setPassword } from '../../components/action'
+import { useLogin } from '../../hooks/useLogin'
+import { SpinnerContainer } from '../register/register.styled'
+import Spinner from '../../components/spinner/Spinner'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const Login = ({ registerLink }) => {
   const email = useSelector((state) => state.user.email)
@@ -10,14 +15,20 @@ const Login = ({ registerLink }) => {
 
   const dispatch = useDispatch()
 
+  const { login, spinner } = useLogin()
+
   const submitLoginHandler = (e) => {
     e.preventDefault()
-    console.log(email, password)
+    login(email, password)
     dispatch(setEmail(''))
     dispatch(setPassword(''))
   }
+
+  const toastContainerStyle = {
+    width: 'auto',
+  }
   return (
-    <LoginWrapper login={login}>
+    <LoginWrapper loginImage={loginImage}>
       <Form onSubmit={submitLoginHandler}>
         <h1>Login</h1>
         <label>Email</label>
@@ -38,6 +49,8 @@ const Login = ({ registerLink }) => {
           <button onClick={registerLink}>Register</button>
         </Link>
       </Form>
+      <SpinnerContainer>{spinner && <Spinner />}</SpinnerContainer>
+      <ToastContainer style={toastContainerStyle} />
     </LoginWrapper>
   )
 }

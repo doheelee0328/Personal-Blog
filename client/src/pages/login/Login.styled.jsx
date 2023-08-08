@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const LoginWrapper = styled.div`
   height: 100vh;
-  background-image: url(${(props) => props.login});
+  background-image: url(${(props) => props.loginImage});
   opacity: 0.8;
 `
 export const Form = styled.form`

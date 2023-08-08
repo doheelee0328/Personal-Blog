@@ -1,8 +1,8 @@
-import login from '../../image/Login.webp'
+import loginImage from '../../image/Login.webp'
 import { LoginWrapper, Form } from '../login/Login.styled'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { ToastContainer, toast } from 'react-toastify'
+import { useToastMessage } from '../../context/Toast'
 import 'react-toastify/dist/ReactToastify.css'
 import {
   setName,
@@ -13,6 +13,7 @@ import {
 import { useRegister } from '../../hooks/useRegister'
 import Spinner from '../../components/spinner/Spinner'
 import { SpinnerContainer } from './register.styled'
+import { ToastContainer } from 'react-toastify'
 import '../../hooks/Toast.css'
 
 const Register = ({ registerLink }) => {
@@ -22,24 +23,12 @@ const Register = ({ registerLink }) => {
   const confirmPassword = useSelector((state) => state.user.confirmPassword)
 
   const { register, spinner } = useRegister()
+  const { errorMessage } = useToastMessage()
 
   const dispatch = useDispatch()
 
   const toastContainerStyle = {
     width: 'auto',
-  }
-
-  const errorMessage = (message) => {
-    toast.error(message, {
-      position: toast.POSITION.TOP_CENTER,
-      className: 'custom-toast-container',
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    })
   }
 
   const submitRegisterHandler = async (e) => {
@@ -59,7 +48,7 @@ const Register = ({ registerLink }) => {
     dispatch(setConfirmPassword(''))
   }
   return (
-    <LoginWrapper login={login}>
+    <LoginWrapper loginImage={loginImage}>
       <Form onSubmit={submitRegisterHandler}>
         <h1>Register</h1>
         <label>Name</label>
