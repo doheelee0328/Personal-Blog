@@ -23,6 +23,7 @@ $height: 30px;
   margin: auto;
   width: 50%;
   height: 80%;
+  // transform: translate(50x, -50px);
   // can nest the children classname inside the parent
   /*instead of writing .form-container .login-header {    font-size: 40px;
     color: $primaryColor;}
@@ -30,8 +31,9 @@ $height: 30px;
     */
   .form-header {
     font-size: 40px;
-    color: $primaryColor;
+    color: white;
     padding-bottom: 20px;
+    text-shadow: 2px 2px #000000;
 
     // copy and paste the variables
   }
@@ -50,6 +52,7 @@ $height: 30px;
       width: $width;
       height: $height;
       border: none;
+      box-shadow: 2px 2px 2px 2px #828282;
 
       &:focus {
         outline: none;
@@ -65,9 +68,11 @@ $height: 30px;
     font-weight: $boldText;
     font-size: 12px;
     cursor: pointer;
+    margin-bottom: 20px;
 
     &:hover {
       transform: scale(1.1);
+      box-shadow: 2px 2px 2px 2px #828282;
     }
   }
 
@@ -77,7 +82,7 @@ $height: 30px;
       font-weight: $boldText;
     }
     .link-different-page {
-      color: $primaryColor;
+      color: white;
       &:hover {
         transform: scale(1.1);
       }
