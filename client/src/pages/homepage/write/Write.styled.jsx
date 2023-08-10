@@ -47,9 +47,7 @@ export const Button = styled.button`
   height: 50px;
   cursor: pointer;
   box-shadow: 1px 2px;
-  position: absolute;
-  left: 950px;
-  top: 3px;
+
   font-size: 18px;
 `
 export const ImageWrapper = styled.div`

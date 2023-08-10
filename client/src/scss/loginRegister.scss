@@ -1,0 +1,86 @@
+// create variables
+// can change it easily when you want to change the color
+// reuse the style to the elements
+$primaryColor: black;
+$boldText: bolder;
+$width: 300px;
+$height: 30px;
+
+// take a block of codes and use it anywhere
+@mixin flexCenter($direction, $gap) {
+  // can re-use the flex direction with a different direction
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+.form-container {
+  @include flexCenter(column, 5px);
+  // pass the column
+  // can re-use them using include
+  margin: auto;
+  width: 50%;
+  height: 80%;
+  // can nest the children classname inside the parent
+  /*instead of writing .form-container .login-header {    font-size: 40px;
+    color: $primaryColor;}
+    
+    */
+  .form-header {
+    font-size: 40px;
+    color: $primaryColor;
+    padding-bottom: 20px;
+
+    // copy and paste the variables
+  }
+  .email-password-container {
+    @include flexCenter(column, 5px);
+
+    padding-bottom: 10px;
+
+    .labels {
+      color: $primaryColor;
+      font-weight: $boldText;
+      padding-bottom: 2px;
+    }
+
+    .inputs {
+      width: $width;
+      height: $height;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .buttons {
+    width: $width;
+    height: $height;
+    border: 2px solid #828282;
+    background-color: transparent;
+    color: $primaryColor;
+    font-weight: $boldText;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .another-direction {
+    @include flexCenter(row, 10px);
+    .new-user {
+      font-weight: $boldText;
+    }
+    .link-different-page {
+      color: $primaryColor;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

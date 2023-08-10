@@ -1,10 +1,9 @@
-import React from 'react'
 import { FormContainer, SearchIcon } from './Form.styled'
 
-const Form = () => {
+const Form = ({ setFilterText }) => {
   return (
     <FormContainer>
-      <input type='text' />
+      <input type='text' onChange={(e) => setFilterText(e.target.value)} />
       <SearchIcon className='search-icon fa-solid fa-magnifying-glass'></SearchIcon>
     </FormContainer>
   )

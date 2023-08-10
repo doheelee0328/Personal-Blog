@@ -1,14 +1,15 @@
 import Header from '../../components/header/Header'
 import Sidebar from '../../components/sidebar/Sidebar'
-import PostInfo from '../../components/post/PostInfo'
+// import Post from '../../components/post/Post'
 import { HomeWrapper, PostWrapper } from './Homepage.styled'
-const HomePage = () => {
+
+const HomePage = ({ displayPosts }) => {
   return (
     <>
       <Header />
       <HomeWrapper>
         <PostWrapper>
-          <PostInfo />
+          <div>{displayPosts()}</div>
         </PostWrapper>
         <Sidebar />
       </HomeWrapper>

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { useToastMessage } from '../../context/Toast'
 import Form from '../form/Form'
 
-const Topbar = ({ activeRegister }) => {
+const Topbar = ({ activeRegister, setFilterText, filterText }) => {
   const { logout } = useLogout()
   const { successMessage } = useToastMessage()
 
@@ -21,9 +21,10 @@ const Topbar = ({ activeRegister }) => {
   const navLink = ({ isActive }) => (isActive ? activeStyle : undefined)
 
   const handleClickLogout = () => {
-    logout()
-    successMessage('You logged out successfully')
-    navigate('/login')
+    if (logout()) {
+      successMessage('You logged out successfully')
+      navigate('/login')
+    }
   }
 
   return (
@@ -32,6 +33,7 @@ const Topbar = ({ activeRegister }) => {
         <TopItems>
           <SocialMedia />
         </TopItems>
+
         <TopItems>
           <TopList>
             <Items>
@@ -53,7 +55,7 @@ const Topbar = ({ activeRegister }) => {
               </NavLink>
             </Items>
             <Items>
-              <li onClick={handleClickLogout}>Logout</li>
+              <span onClick={handleClickLogout}>Logout</span>
             </Items>
           </TopList>
         </TopItems>
@@ -63,7 +65,7 @@ const Topbar = ({ activeRegister }) => {
               <img src={img} alt='me' className='topImage' />
             </Image>
           </Link>
-          <Form />
+          <Form setFilterText={setFilterText} filterText={filterText} />
         </TopItems>
       </TopWrapper>
       <Outlet />

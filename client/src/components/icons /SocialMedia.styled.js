@@ -6,4 +6,8 @@ export const SocialMediaItems = styled.i`
   font-size: 20px;
   margin: 2px;
   cursor: pointer;
+
+  @media (max-width: 1100px) {
+    font-size: 10px;
+  }
 `

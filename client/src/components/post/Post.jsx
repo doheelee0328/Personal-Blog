@@ -1,4 +1,3 @@
-// import styles from './post.module.css'
 import {
   PostWrapper,
   ImageWrapper,

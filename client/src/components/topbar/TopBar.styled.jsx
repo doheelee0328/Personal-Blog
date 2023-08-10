@@ -11,13 +11,14 @@ export const TopWrapper = styled.div`
   z-index: 999;
   background-color: white;
   letter-spacing: 1px;
+  position: relative;
 `
 
 export const TopItems = styled.div`
-  flex: 3;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex: 1;
 `
 
 export const TopList = styled.ul`
@@ -30,7 +31,6 @@ export const TopList = styled.ul`
 `
 
 export const Items = styled.span`
-  font-size: 18px;
   font-weight: 300;
   cursor: pointer;
   position: relative;
@@ -59,6 +59,16 @@ export const Items = styled.span`
   a {
     text-decoration: none;
     color: black;
+
+    @media (max-width: 1100px) {
+      font-size: 10px;
+    }
+  }
+
+  span {
+    @media (max-width: 1100px) {
+      font-size: 10px;
+    }
   }
 `
 
@@ -68,5 +78,10 @@ export const Image = styled.div`
     height: 40px;
     border-radius: 50%;
     margin-top: 8px;
+
+    @media (max-width: 1100px) {
+      width: 20px;
+      height: 20px;
+    }
   }
 `
