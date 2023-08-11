@@ -8,54 +8,54 @@ import Tech from '../../image/Tech.jpeg'
 
 export const info = [
   {
-    id: 'post1',
+    id: 1,
     image: Life,
     categories: 'Life',
     title: 'Story about my life',
     postDate: '1 hour ago',
+    description: 'I moved to uk 10 years ago',
   },
   {
-    id: 'post2',
+    id: 2,
     image: Music,
     categories: 'Music',
     title: 'The music that i listen to ',
     postDate: '2 hours ago',
+    description: 'My favourite music is kpop',
   },
   {
-    id: 'post3',
+    id: 3,
     image: Style,
     categories: 'Style',
     title: 'My favourite style of clothing',
-    postDate: '2 hours ago',
+    description: 'My fashion is more korean, more into innocent kind of looks',
   },
   {
-    id: 'post4',
+    id: 4,
     image: Hobbies,
     categories: 'Hobbies',
     title: 'List of my hobbies',
     postDate: '4 hours ago',
+    description:
+      'I love dancing but since i started learning how to code. Coding has been my hobby as well ',
   },
 
   {
-    id: 'post5',
+    id: 5,
     image: Food,
     categories: 'Food',
     title: 'My food recommendation',
     postDate: '5 hours ago',
+    description:
+      'My favourite food is always korean food! cant live without them',
   },
   {
-    id: 'post6',
+    id: 6,
     image: Tech,
     categories: 'Tech',
     title: 'How i got interested in Tech',
     postDate: '5 hours ago',
+    description:
+      'I started to get into tech after doing javascript challenges and fell in love with problem solving aspect of it',
   },
 ]
-
-// return (
-//   <>
-//     <PostList info={info}></PostList>
-//   </>
-// )
-
-// export default PostInfo

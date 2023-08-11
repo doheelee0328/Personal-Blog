@@ -9,6 +9,7 @@ import EditProfile from './pages/editProfile/ EditProfile'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { info } from '../src/components/post/PostInfo'
+import SinglePostCard from './components/singleposts/SinglePostCard'
 
 // import LoginPage from './pages/login/LoginPage'
 function App() {
@@ -29,6 +30,7 @@ function App() {
       .map((p) => (
         <Post
           key={p.id}
+          id={p.id}
           image={p.image}
           categories={p.categories}
           title={p.title}
@@ -58,6 +60,7 @@ function App() {
           element={<Register registerLink={registerLink} />}
         />
         <Route path='profile' element={<EditProfile />} />
+        <Route path='single-post/:id' element={<SinglePostCard />} />
       </Route>
     </Routes>
   )

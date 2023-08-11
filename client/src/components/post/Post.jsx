@@ -6,12 +6,16 @@ import {
   PostTitle,
   PostCategories,
 } from './Post.styled'
-const Post = ({ image, categories, title, postDate }) => {
+import { Link } from 'react-router-dom'
+const Post = ({ id, image, categories, title, postDate }) => {
   return (
     <PostWrapper>
-      <ImageWrapper>
-        <img className='image' src={image} alt='post' />
-      </ImageWrapper>
+      <Link to={`single-post/${id}`}>
+        <ImageWrapper>
+          <img className='image' src={image} alt='post' />
+        </ImageWrapper>
+      </Link>
+
       <PostInfo>
         <PostCategories>
           <PostCategories>{categories}</PostCategories>

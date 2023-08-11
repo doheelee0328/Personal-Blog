@@ -1,10 +1,21 @@
 import styled from 'styled-components'
 
+export const SinglePostContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
 export const SinglePost = styled.div`
   display: flex;
   flex-direction: column;
   flex: 9;
   margin: 40px;
+
+  .image {
+    width: 60%;
+    object-fit: cover;
+  }
 `
 
 export const SinglePostTitle = styled.h1`
