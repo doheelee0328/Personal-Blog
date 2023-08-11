@@ -1,5 +1,5 @@
 import loginImage from '../../image/Login.webp'
-import { LoginWrapper, Form } from '../login/Login.styled'
+import { LoginWrapper } from '../login/Login.styled'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { useToastMessage } from '../../context/Toast'
@@ -15,6 +15,7 @@ import Spinner from '../../components/spinner/Spinner'
 import { SpinnerContainer } from './register.styled'
 import { ToastContainer } from 'react-toastify'
 import '../../hooks/Toast.css'
+import '../../scss/loginRegister.scss'
 
 const Register = ({ registerLink }) => {
   const email = useSelector((state) => state.user.email)
@@ -49,42 +50,54 @@ const Register = ({ registerLink }) => {
   }
   return (
     <LoginWrapper loginImage={loginImage}>
-      <Form onSubmit={submitRegisterHandler}>
-        <h1>Register</h1>
-        <label>Name</label>
-        <input
-          type='text'
-          name='name'
-          onChange={(e) => dispatch(setName(e.target.value))}
-          value={name}
-        />
-        <label>Email</label>
-        <input
-          type='email'
-          name='email'
-          onChange={(e) => dispatch(setEmail(e.target.value))}
-          value={email}
-        />
-        <label>Password</label>
-        <input
-          type='password'
-          name='password'
-          onChange={(e) => dispatch(setPassword(e.target.value))}
-          value={password}
-        />
-        <label>Confirm Password</label>
-        <input
-          type='password'
-          name='confirmPassword'
-          onChange={(e) => dispatch(setConfirmPassword(e.target.value))}
-          value={confirmPassword}
-        />
-        <button type='submit'>Register</button>
-        <p>New user?</p>
-        <Link to='/login'>
-          <button onClick={registerLink}>Login</button>
-        </Link>
-      </Form>
+      <form onSubmit={submitRegisterHandler} className='form-container'>
+        <h1 className='form-header'>Register</h1>
+        <div className='email-password-container'>
+          <label className='labels'>Name</label>
+          <input
+            type='text'
+            name='name'
+            onChange={(e) => dispatch(setName(e.target.value))}
+            value={name}
+            className='inputs'
+          />
+          <label className='labels'>Email</label>
+          <input
+            type='email'
+            name='email'
+            onChange={(e) => dispatch(setEmail(e.target.value))}
+            value={email}
+            className='inputs'
+          />
+          <label className='labels'>Password</label>
+          <input
+            type='password'
+            name='password'
+            onChange={(e) => dispatch(setPassword(e.target.value))}
+            value={password}
+            className='inputs'
+          />
+          <label className='labels'>Confirm Password</label>
+          <input
+            type='password'
+            name='confirmPassword'
+            onChange={(e) => dispatch(setConfirmPassword(e.target.value))}
+            value={confirmPassword}
+            className='inputs'
+          />
+        </div>
+        <button type='submit' className='buttons'>
+          Register
+        </button>
+        <div className='another-direction'>
+          <p className='new-user'>Already A User?</p>
+          <Link to='/login' className='link-different-page'>
+            <p onClick={registerLink} className='link-different-pages'>
+              Login
+            </p>
+          </Link>
+        </div>
+      </form>
       <SpinnerContainer>{spinner && <Spinner />}</SpinnerContainer>
       <ToastContainer style={toastContainerStyle} />
     </LoginWrapper>

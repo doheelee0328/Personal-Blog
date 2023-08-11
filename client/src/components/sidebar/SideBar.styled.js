@@ -6,6 +6,10 @@ export const SideBarWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100px;
+
+  @media (max-width: 660px) {
+    display: none;
+  }
 `
 
 export const SidebarItem = styled.div`

@@ -3,8 +3,9 @@
 // reuse the style to the elements
 $primaryColor: black;
 $boldText: bolder;
-$width: 300px;
-$height: 30px;
+$width: 400px;
+$height: 35px;
+$grey: #242526;
 
 // take a block of codes and use it anywhere
 @mixin flexCenter($direction, $gap) {
@@ -23,6 +24,8 @@ $height: 30px;
   margin: auto;
   width: 50%;
   height: 80%;
+  padding-top: 20px;
+
   // transform: translate(50x, -50px);
   // can nest the children classname inside the parent
   /*instead of writing .form-container .login-header {    font-size: 40px;
@@ -30,22 +33,22 @@ $height: 30px;
     
     */
   .form-header {
-    font-size: 40px;
+    font-size: 50px;
     color: white;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     text-shadow: 2px 2px #000000;
 
     // copy and paste the variables
   }
   .email-password-container {
-    @include flexCenter(column, 5px);
+    @include flexCenter(column, 10px);
 
     padding-bottom: 10px;
 
     .labels {
-      color: $primaryColor;
+      color: $grey;
       font-weight: $boldText;
-      padding-bottom: 2px;
+      margin-bottom: 4px;
     }
 
     .inputs {
@@ -53,6 +56,7 @@ $height: 30px;
       height: $height;
       border: none;
       box-shadow: 2px 2px 2px 2px #828282;
+      margin-bottom: 10px;
 
       &:focus {
         outline: none;
@@ -64,9 +68,9 @@ $height: 30px;
     height: $height;
     border: 2px solid #828282;
     background-color: transparent;
-    color: $primaryColor;
+    color: $grey;
     font-weight: $boldText;
-    font-size: 12px;
+    font-size: 15px;
     cursor: pointer;
     margin-bottom: 20px;
 
@@ -82,7 +86,8 @@ $height: 30px;
       font-weight: $boldText;
     }
     .link-different-page {
-      color: white;
+      color: $primaryColor;
+
       &:hover {
         transform: scale(1.1);
       }

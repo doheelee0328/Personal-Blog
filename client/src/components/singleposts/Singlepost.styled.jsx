@@ -9,12 +9,13 @@ export const SinglePostContainer = styled.div`
 export const SinglePost = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 9;
+
   margin: 40px;
 
   .image {
     width: 60%;
     object-fit: cover;
+    margin-left: 20%;
   }
 `
 
