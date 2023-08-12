@@ -80,7 +80,7 @@ export const Items = styled.span`
 
 export const Image = styled.div`
   .topImage {
-    width: 35px;
+    width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-top: 8px;
