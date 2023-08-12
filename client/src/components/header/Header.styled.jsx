@@ -25,6 +25,10 @@ export const TitleLg = styled.span`
   top: 18%;
   font-size: 80px;
   z-index: 100;
+
+  @media (max-width: 700px) {
+    font-size: 50px;
+  }
 `
 
 export const Image = styled.div`

@@ -61,12 +61,18 @@ export const Items = styled.span`
     color: black;
 
     @media (max-width: 1100px) {
+      font-size: 15px;
+    }
+    @media (max-width: 700px) {
       font-size: 10px;
     }
   }
 
   span {
     @media (max-width: 1100px) {
+      font-size: 15px;
+    }
+    @media (max-width: 700px) {
       font-size: 10px;
     }
   }

@@ -6,22 +6,32 @@ export const WriteWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 700px) {
+    width: 60%;
+  }
 `
 export const WriteForm = styled.form`
-  position: relative;
-  left: 40px;
   display: flex;
-  margin-top: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  max-width: 100%;
+  margin-left: 10%;
 `
 export const WriteFormGroup = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 
   .writeInput {
-    font-size: 20px;
     border: none;
     padding: 10px;
     outline: none;
+    font-size: 10px;
+
+    ::placeholder {
+      font-size: 30px;
+    }
   }
 
   i {
@@ -49,6 +59,12 @@ export const Button = styled.button`
   box-shadow: 1px 2px;
 
   font-size: 18px;
+
+  @media (max-width: 700px) {
+    margin-top: 20px;
+
+    margin-left: 150px;
+  }
 `
 export const ImageWrapper = styled.div`
   img {
