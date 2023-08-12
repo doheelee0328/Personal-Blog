@@ -13,9 +13,9 @@ export const SinglePost = styled.div`
   margin: 40px;
 
   .image {
-    width: 60%;
+    width: 70vw;
+    height: 60vh;
     object-fit: cover;
-    margin-left: 20%;
   }
 `
 
