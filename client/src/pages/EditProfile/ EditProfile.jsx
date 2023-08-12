@@ -8,7 +8,7 @@ const EditProfile = () => {
       <form className='form-container '>
         <img src={img} alt='edit-profile' className='edit-profile' />
         <div className='email-password-container '>
-          <label className='labels'>Nam</label>
+          <label className='labels'>Name</label>
           <input type='text' className='inputs' />
           <label className='labels'>Email</label>
           <input type='text' className='inputs' />
