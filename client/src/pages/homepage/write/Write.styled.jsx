@@ -17,6 +17,11 @@ export const WriteForm = styled.form`
   margin-top: 30px;
   max-width: 100%;
   margin-left: 10%;
+
+  /* @media (max-width: 992px) {
+    justify-content: center;
+    align-items: center;
+  } */
 `
 export const WriteFormGroup = styled.div`
   display: flex;
@@ -46,6 +51,10 @@ export const WriteFormGroup = styled.div`
     align-items: center;
     justify-content: center;
   }
+
+  @media (max-width: 1000px) {
+    margin: 0 auto;
+  }
 `
 
 export const Button = styled.button`
@@ -64,6 +73,10 @@ export const Button = styled.button`
     margin-top: 20px;
 
     margin-left: 150px;
+  }
+
+  @media (max-width: 1000px) {
+    margin: 0 auto;
   }
 `
 export const ImageWrapper = styled.div`

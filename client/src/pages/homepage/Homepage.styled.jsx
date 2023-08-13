@@ -2,12 +2,14 @@ import styled from 'styled-components'
 
 export const HomeWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  gap: 5px;
+  justify-content: center;
+  margin: auto;
 `
 
 export const PostWrapper = styled.div`
   display: flex;
-  width: 70%;
+  width: 80%;
   flex-wrap: wrap;
 
   @media (max-width: 700px) {

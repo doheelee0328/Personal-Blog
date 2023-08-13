@@ -1,21 +1,14 @@
-// create variables
-// can change it easily when you want to change the color
-// reuse the style to the elements
-$primaryColor: black;
-$boldText: bolder;
-$width: 400px;
-$height: 35px;
-$grey: #242526;
+@import './variable';
 
-// take a block of codes and use it anywhere
-@mixin flexCenter($direction, $gap) {
-  // can re-use the flex direction with a different direction
-  display: flex;
-  flex-direction: $direction;
-  align-items: center;
-  justify-content: center;
-  gap: $gap;
-}
+// // take a block of codes and use it anywhere
+// @mixin flexCenter($direction, $gap) {
+//   // can re-use the flex direction with a different direction
+//   display: flex;
+//   flex-direction: $direction;
+//   align-items: center;
+//   justify-content: center;
+//   gap: $gap;
+// }
 
 .form-container {
   @include flexCenter(column, 5px);
