@@ -69,7 +69,7 @@ userSchema.statics.login = async function (email, password) {
   const user = await this.findOne({ email })
   // if this exists
   if (!user) {
-    throw new Error('Incorrect Email')
+    throw new Error('Email does not exist')
   }
   // to check if it exists
 
@@ -77,6 +77,7 @@ userSchema.statics.login = async function (email, password) {
   if (!match) {
     throw new Error('Incorrect Password')
   }
+
   return user
 }
 

@@ -39,6 +39,7 @@ const Login = ({ registerLink }) => {
             name='email'
             onChange={(e) => dispatch(setEmail(e.target.value))}
             className='inputs'
+            value={email}
           />
           <label className='labels'>Password</label>
           <input
@@ -46,6 +47,7 @@ const Login = ({ registerLink }) => {
             name='password'
             onChange={(e) => dispatch(setPassword(e.target.value))}
             className='inputs'
+            value={password}
           />
         </div>
         <button type='submit' className='buttons'>
