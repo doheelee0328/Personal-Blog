@@ -59,6 +59,7 @@ export const Items = styled.span`
   a {
     text-decoration: none;
     color: black;
+    font-size: 18px;
 
     @media (max-width: 1100px) {
       font-size: 15px;
@@ -69,6 +70,7 @@ export const Items = styled.span`
   }
 
   span {
+    font-size: 18px;
     @media (max-width: 1100px) {
       font-size: 15px;
     }

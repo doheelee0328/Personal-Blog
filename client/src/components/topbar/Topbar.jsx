@@ -43,7 +43,7 @@ const Topbar = ({ activeRegister, setFilterText, filterText }) => {
             </Items>
             <Items>
               <NavLink to='/write' style={navLink}>
-                Write Your Story
+                Story
               </NavLink>
             </Items>
             <Items>
