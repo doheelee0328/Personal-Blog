@@ -1,70 +1,69 @@
 @import './variable.scss';
 
 .background-profile {
-  background-image: url('https://i.pinimg.com/564x/a6/4a/6c/a64a6cedea866ee10bb19d95a40d3885.jpg');
-  width: 100vw;
+  background-image: url('https://i.pinimg.com/564x/35/e5/7a/35e57a7d0b49a2e082f3e2cf844b47e5.jpg');
+  width: 80vw;
   height: 100vh;
+  margin: auto;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.4;
-}
+  background-size: cover;
 
-.forms {
-  @include flexCenter(column, 10px);
-  position: relative;
+  .forms {
+    @include flexCenter(column, 10px);
 
-  .labels {
-    font-size: 15px;
-    margin-top: 10px;
-    font-weight: $boldText;
-  }
-  .inputs {
-    width: 280px;
-    height: 28px;
-    border: none;
-    box-shadow: 2px 1px 1px 1px #828282;
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  .more-form-container {
-    @include flexCenter(column, 30px);
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -90%);
-    z-index: 2;
-
-    .edit-profile {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
+    .labels {
+      font-size: 16px;
       margin-top: 10px;
-      border: 2px solid white;
-      box-shadow: 2px 2px 2px 2px #828282;
-      margin-bottom: 20px;
-      margin: 0 auto;
+      font-weight: $boldText;
+    }
+    .inputs {
+      width: $width;
+      height: $height;
+      border: none;
+      box-shadow: 2px 1px 1px 1px #828282;
+
+      &:focus {
+        outline: none;
+      }
     }
 
-    .email-password {
-      @include flexCenter(column, 5px);
-    }
-    .button-containers {
-      @include flexCenter(row, 2rem);
+    .more-form-container {
+      @include flexCenter(column, 30px);
 
-      .profile-buttons {
-        width: 150px;
-        height: 30px;
-        border: 2px solid #828282;
-        font-size: 15px;
-        cursor: pointer;
-        background-color: transparent;
-        font-weight: $boldText;
+      z-index: 2;
+      margin-top: 100px;
 
-        &:hover {
-          transform: scale(1.1);
-          box-shadow: 2px 1px 1px 1px #828282;
+      .edit-profile {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-top: 10px;
+        border: 2px solid white;
+        box-shadow: 2px 2px 2px 2px #828282;
+        margin-bottom: 20px;
+        margin: 0 auto;
+      }
+
+      .email-password {
+        @include flexCenter(column, 5px);
+      }
+      .button-containers {
+        @include flexCenter(row, 2rem);
+
+        .profile-buttons {
+          width: 200px;
+          height: 30px;
+          border: 2px solid #828282;
+          font-size: 15px;
+          cursor: pointer;
+          background-color: transparent;
+          font-weight: $boldText;
+
+          &:hover {
+            transform: scale(1.1);
+            box-shadow: 2px 1px 1px 1px #828282;
+          }
         }
       }
     }
