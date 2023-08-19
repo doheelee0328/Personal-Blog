@@ -12,7 +12,7 @@ import {
 } from '../../components/action'
 import { useRegister } from '../../hooks/useRegister'
 import Spinner from '../../components/spinner/Spinner'
-import { SpinnerContainer } from './register.styled'
+import { SpinnerRegisterContainer } from './register.styled'
 import { ToastContainer } from 'react-toastify'
 import '../../hooks/Toast.css'
 import '../../scss/loginRegister.scss'
@@ -98,7 +98,9 @@ const Register = ({ registerLink }) => {
           </Link>
         </div>
       </form>
-      <SpinnerContainer>{spinner && <Spinner />}</SpinnerContainer>
+      <SpinnerRegisterContainer>
+        {spinner && <Spinner />}
+      </SpinnerRegisterContainer>
       <ToastContainer style={toastContainerStyle} />
     </LoginWrapper>
   )
