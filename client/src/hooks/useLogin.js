@@ -31,6 +31,7 @@ export const useLogin = () => {
       if (response.status === 201) {
         dispatch({ type: 'Login', payload: response.data })
         localStorage.setItem('user', JSON.stringify(response.data))
+
         successMessage('You have logged in successfully')
         console.log('You have logged in successfully')
         setSpinner(true)

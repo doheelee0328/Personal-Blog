@@ -23,11 +23,13 @@ export const TopItems = styled.div`
 
 export const TopList = styled.ul`
   display: flex;
-  justify-content: center;
+  /* justify-content: space-around; */
   list-style-type: none;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
   margin: 0;
   padding: 0;
+  margin-left: 40px;
 `
 
 export const Items = styled.span`

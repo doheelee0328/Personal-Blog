@@ -1,9 +1,12 @@
 import { HeaderWrapper, Title, TitleLg, Image } from './Header.styled'
+import { useAuthContext } from '../../hooks/useAuthContext'
 const Header = () => {
+  const { user } = useAuthContext()
+
   return (
     <HeaderWrapper>
       <Title>
-        <TitleLg>Dohee's Blog</TitleLg>
+        <TitleLg>Welcome {user && user.name} To My Blog</TitleLg>
       </Title>
       <Image>
         <img

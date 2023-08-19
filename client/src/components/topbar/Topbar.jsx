@@ -5,11 +5,14 @@ import { NavLink, Outlet, Link } from 'react-router-dom'
 import { useLogout } from '../../hooks/useLogout'
 import { useNavigate } from 'react-router-dom'
 import { useToastMessage } from '../../context/Toast'
+import { useAuthContext } from '../../hooks/useAuthContext'
 import Form from '../form/Form'
 
 const Topbar = ({ activeRegister, setFilterText, filterText }) => {
   const { logout } = useLogout()
   const { successMessage } = useToastMessage()
+
+  const { user } = useAuthContext()
 
   const navigate = useNavigate()
 
@@ -21,10 +24,9 @@ const Topbar = ({ activeRegister, setFilterText, filterText }) => {
   const navLink = ({ isActive }) => (isActive ? activeStyle : undefined)
 
   const handleClickLogout = () => {
-    if (logout()) {
-      successMessage('You logged out successfully')
-      navigate('/login')
-    }
+    logout()
+    successMessage('You logged out successfully')
+    navigate('/login')
   }
 
   return (
@@ -55,7 +57,7 @@ const Topbar = ({ activeRegister, setFilterText, filterText }) => {
               </NavLink>
             </Items>
             <Items>
-              <span onClick={handleClickLogout}>Logout</span>
+              {user && <span onClick={handleClickLogout}>Logout</span>}
             </Items>
           </TopList>
         </TopItems>

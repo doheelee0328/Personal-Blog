@@ -6,23 +6,39 @@
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
-.form {
+.forms {
   @include flexCenter(column, 10px);
   position: relative;
 
+  .labels {
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: $boldText;
+  }
+  .inputs {
+    width: 280px;
+    height: 28px;
+    border: none;
+    box-shadow: 2px 1px 1px 1px #828282;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   .more-form-container {
-    @include flexCenter(column, 10px);
+    @include flexCenter(column, 30px);
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -90%);
     z-index: 2;
 
     .edit-profile {
-      width: 200px;
-      height: 200px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       margin-top: 10px;
       border: 2px solid white;
@@ -31,18 +47,26 @@
       margin: 0 auto;
     }
 
-    .profile-buttons {
-      width: 150px;
-      height: 30px;
-      border: none;
-      font-size: 15px;
-      border-radius: 20px;
-    }
     .email-password {
       @include flexCenter(column, 5px);
     }
     .button-containers {
-      @include flexCenter(row, 5px);
+      @include flexCenter(row, 2rem);
+
+      .profile-buttons {
+        width: 150px;
+        height: 30px;
+        border: 2px solid #828282;
+        font-size: 15px;
+        cursor: pointer;
+        background-color: transparent;
+        font-weight: $boldText;
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 2px 1px 1px 1px #828282;
+        }
+      }
     }
   }
 }

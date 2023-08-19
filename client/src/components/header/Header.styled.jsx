@@ -23,11 +23,12 @@ export const Title = styled.div`
 export const TitleLg = styled.span`
   position: absolute;
   top: 18%;
-  font-size: 80px;
+  font-size: 70px;
   z-index: 100;
+  text-align: center;
 
   @media (max-width: 700px) {
-    font-size: 50px;
+    font-size: 40px;
   }
 `
 
@@ -35,7 +36,7 @@ export const Image = styled.div`
   img {
     width: 100%;
     height: 450px;
-    margin-top: 30apx;
+    margin-top: -40px;
     object-fit: cover;
     opacity: 0.6;
   }
