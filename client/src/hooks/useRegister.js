@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useAuthContext } from './useAuthContext'
 import { useToastMessage } from '../context/Toast'
 import { useNavigate } from 'react-router-dom'
-import './Toast.css'
 
 export const useRegister = () => {
   const [spinner, setSpinner] = useState(false)

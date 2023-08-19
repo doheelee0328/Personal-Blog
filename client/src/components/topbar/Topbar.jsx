@@ -6,6 +6,8 @@ import { useLogout } from '../../hooks/useLogout'
 import { useNavigate } from 'react-router-dom'
 import { useToastMessage } from '../../context/Toast'
 import { useAuthContext } from '../../hooks/useAuthContext'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Form from '../form/Form'
 
 const Topbar = ({ activeRegister, setFilterText, filterText }) => {
@@ -21,11 +23,15 @@ const Topbar = ({ activeRegister, setFilterText, filterText }) => {
     color: 'black',
   }
 
+  const toastContainerStyle = {
+    width: 'auto',
+  }
+
   const navLink = ({ isActive }) => (isActive ? activeStyle : undefined)
 
   const handleClickLogout = () => {
     logout()
-    successMessage('You logged out successfully')
+    successMessage('You have logged out successfully')
     navigate('/login')
   }
 
@@ -69,6 +75,7 @@ const Topbar = ({ activeRegister, setFilterText, filterText }) => {
           </Link>
           <Form setFilterText={setFilterText} filterText={filterText} />
         </TopItems>
+        <ToastContainer style={toastContainerStyle} />
       </TopWrapper>
       <Outlet />
     </>

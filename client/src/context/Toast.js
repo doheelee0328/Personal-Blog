@@ -1,6 +1,6 @@
 import { useContext, createContext } from 'react'
 import { toast } from 'react-toastify'
-import '../hooks/Toast.css'
+import './Toast.css'
 
 const ToastContext = createContext()
 
@@ -8,7 +8,7 @@ export const ToastContextProvider = ({ children }) => {
   const errorMessage = (message) => {
     toast.error(message, {
       position: toast.POSITION.TOP_CENTER,
-      className: 'custom-toast-container',
+      className: 'toast-position',
       autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -20,8 +20,8 @@ export const ToastContextProvider = ({ children }) => {
 
   const successMessage = (message) => {
     toast.success(message, {
-      position: 'top-center',
-      className: 'custom-toast-container',
+      position: toast.POSITION.TOP_CENTER,
+      className: 'toast-position',
       autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
