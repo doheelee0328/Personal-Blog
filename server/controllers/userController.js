@@ -39,11 +39,48 @@ const signupUser = async (req, res) => {
   }
 }
 
-const updateUser = async (req, res) => {}
+const updateUser = async (req, res) => {
+  const id = req.params.id
+  const { name, email, password } = req.body
 
-const deleteUser = async (req, res) => {}
+  try {
+    const updateUser = await User.findByIdAndUpdate(
+      id,
+      {
+        name,
+        email,
+        password,
+      },
+      { new: true }
+    )
+
+    if (!updateUser) {
+      throw new Error('Cannot find the User ')
+    }
+    res.status(200).json({ user: updateUser })
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
+}
+
+const deleteUser = async (req, res) => {
+  const id = req.params.id
+  try {
+    const deleteUser = await User.findByIdAndDelete(id)
+
+    if (!deleteUser) {
+      throw new Error('Cannot find the User')
+    }
+
+    res.status(200).json({ message: 'It has been delete successfully' })
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
+}
 
 module.exports = {
   loginUser,
   signupUser,
+  updateUser,
+  deleteUser,
 }
