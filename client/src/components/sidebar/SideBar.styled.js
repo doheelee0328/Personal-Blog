@@ -5,7 +5,8 @@ export const SideBarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px;
+  margin: 0 auto;
+  width: 10vw;
 
   @media (max-width: 660px) {
     display: none;

@@ -57,7 +57,7 @@ const updateUser = async (req, res) => {
     if (!updateUser) {
       throw new Error('Cannot find the User ')
     }
-    res.status(200).json({ user: updateUser })
+    res.status(200).json(updateUser)
   } catch (error) {
     res.status(400).json({ error: error.message })
   }

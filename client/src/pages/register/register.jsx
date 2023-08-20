@@ -12,7 +12,7 @@ import {
 } from '../../components/action'
 import { useRegister } from '../../hooks/useRegister'
 import Spinner from '../../components/spinner/Spinner'
-import { SpinnerRegisterContainer } from './register.styled'
+import { SpinnerRegisterContainer } from '../../components/spinner/Spinner.styled'
 import { ToastContainer } from 'react-toastify'
 
 import '../../scss/loginRegister.scss'

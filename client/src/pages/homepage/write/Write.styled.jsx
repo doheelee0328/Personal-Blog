@@ -9,10 +9,13 @@ export const WriteWrapper = styled.div`
 
   @media (max-width: 700px) {
     width: 60%;
+    margin: 0 auto;
   }
 `
 export const WriteForm = styled.form`
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 30px;
   max-width: 100%;

@@ -13,3 +13,9 @@ export const SpinnerRegisterContainer = styled.div`
   margin: auto;
   transform: translate(0px, -20px);
 `
+export const SpinnerEditContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  transform: translate(0px, 30px);
+`
