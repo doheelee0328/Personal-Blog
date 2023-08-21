@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEditUser } from '../../hooks/useEditUser'
 import { useDeleteUser } from '../../hooks/useDeleteUser'
 
-const EditProfile = () => {
+const EditProfile = ({ setImage, image }) => {
   const { user } = useAuthContext()
 
   const [name, setName] = useState(user ? user.name : '')
@@ -62,7 +62,7 @@ const EditProfile = () => {
       <div className='background-profile'>
         <div className='forms'>
           <div className='more-form-container'>
-            <Profile />
+            <Profile image={image} setImage={setImage} />
             <div className='email-password '>
               <label className='labels'>Name</label>
               <input

@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react'
-import img from '../../image/blankProfile.webp'
+import React, { useRef, useEffect } from 'react'
 import '../../scss/editProfile.scss'
 
-const Profile = () => {
+const Profile = ({ setImage, image }) => {
   const imageRef = useRef(null)
-  const [image, setImage] = useState(img)
+  // const [image, setImage] = useState(img)
 
   // Load the image from localStorage when the component mounts
   useEffect(() => {
@@ -12,7 +11,7 @@ const Profile = () => {
     if (storedImage) {
       setImage(storedImage)
     }
-  }, [])
+  }, [setImage])
 
   const handleImageClick = () => {
     imageRef.current.click()

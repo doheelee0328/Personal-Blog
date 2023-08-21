@@ -1,6 +1,6 @@
 import Topbar from './components/topbar/Topbar'
 import Update from './pages/homepage/write/Update'
-// import SinglePosts from './pages/homepage/single/SinglePosts'
+import img from '../src/image/blankProfile.webp'
 import Post from './components/post/Post.jsx'
 import HomePage from './pages/homepage/Homepage'
 import Login from './pages/login/Login'
@@ -14,6 +14,7 @@ import SinglePostCard from './components/singleposts/SinglePostCard'
 // import LoginPage from './pages/login/LoginPage'
 function App() {
   const [activeRegister, setActiveRegister] = useState(true)
+  const [image, setImage] = useState(img)
 
   const registerLink = () => {
     setActiveRegister((prev) => !prev)
@@ -48,6 +49,7 @@ function App() {
             activeRegister={activeRegister}
             setFilterText={setFilterText}
             filterText={filterText}
+            image={image}
           />
         }
       >
@@ -59,7 +61,10 @@ function App() {
           path='register'
           element={<Register registerLink={registerLink} />}
         />
-        <Route path='profile' element={<EditProfile />} />
+        <Route
+          path='profile'
+          element={<EditProfile image={image} setImage={setImage} />}
+        />
         <Route path='single-post/:id' element={<SinglePostCard />} />
       </Route>
     </Routes>
