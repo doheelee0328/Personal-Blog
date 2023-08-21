@@ -9,6 +9,7 @@ export const HomeWrapper = styled.div`
 export const PostWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
 
   @media (max-width: 700px) {
     justify-content: center;

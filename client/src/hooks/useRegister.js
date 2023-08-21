@@ -28,7 +28,7 @@ export const useRegister = () => {
         setSpinner(true)
         successMessage('Registered successfully')
         setTimeout(() => {
-          navigate('/login')
+          navigate('/')
         }, 2000)
       }
     } catch (error) {

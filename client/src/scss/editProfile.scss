@@ -12,6 +12,11 @@
   .forms {
     @include flexCenter(column, 10px);
 
+    .yes-button {
+      background-color: yellow;
+      border: none;
+    }
+
     .labels {
       font-size: 16px;
       margin-top: 10px;

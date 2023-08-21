@@ -6,11 +6,6 @@ export const WriteWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  @media (max-width: 700px) {
-    width: 60%;
-    margin: 0 auto;
-  }
 `
 export const WriteForm = styled.form`
   display: flex;
@@ -18,18 +13,12 @@ export const WriteForm = styled.form`
   align-items: center;
   flex-wrap: wrap;
   margin-top: 30px;
-  max-width: 100%;
-  margin-left: 10%;
-
-  /* @media (max-width: 992px) {
-    justify-content: center;
-    align-items: center;
-  } */
 `
 export const WriteFormGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 70vw;
 
   .writeInput {
     border: none;
@@ -39,6 +28,11 @@ export const WriteFormGroup = styled.div`
 
     ::placeholder {
       font-size: 30px;
+
+      @media (max-width: 500px) {
+        font-size: 18px;
+        transform: translate(0px, -5px);
+      }
     }
   }
 
@@ -73,13 +67,9 @@ export const Button = styled.button`
   font-size: 18px;
 
   @media (max-width: 700px) {
-    margin-top: 20px;
-
-    margin-left: 150px;
-  }
-
-  @media (max-width: 1000px) {
-    margin: 0 auto;
+    width: 70px;
+    height: 40px;
+    font-size: 10px;
   }
 `
 export const ImageWrapper = styled.div`
@@ -88,6 +78,6 @@ export const ImageWrapper = styled.div`
     border-radius: 10px;
     width: 70vw;
     height: 250px;
-    margin-left: 150px;
+    margin: 0 auto;
   }
 `

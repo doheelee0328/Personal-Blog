@@ -35,35 +35,31 @@ export const useEditUser = () => {
       password: password,
     }
     console.log(data)
-    if (name || email || password) {
-      try {
-        const response = await axios.patch(url, data, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem('user')}`,
-          },
-        })
-        if (response.status === 200) {
-          setSpinner(true)
 
-          setTimeout(() => {
-            successMessage('Profile updated successfully')
-          }, 500)
+    try {
+      const response = await axios.patch(url, data, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('user')}`,
+        },
+      })
+      if (response.status === 200) {
+        setSpinner(true)
 
-          setTimeout(() => {
-            setSpinner(false)
-          }, 1000)
+        setTimeout(() => {
+          successMessage('Profile updated successfully')
+        }, 500)
 
-          dispatch({ type: 'Login', payload: response.data })
-          console.log(response.data)
-        } else {
-          throw new Error('There has been a problem updating your profile')
-        }
-      } catch (error) {
-        errorMessage(error.message)
-        setSpinner(false)
+        setTimeout(() => {
+          setSpinner(false)
+        }, 1000)
+
+        dispatch({ type: 'Login', payload: response.data })
+      } else {
+        throw new Error(response.data.error)
       }
-    } else {
-      errorMessage('Please enter your details')
+    } catch (error) {
+      errorMessage(error.response.data.error)
+      setSpinner(false)
     }
   }
   return { editProfiles, spinner }

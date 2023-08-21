@@ -90,8 +90,14 @@ export const Image = styled.div`
     margin-top: 8px;
 
     @media (max-width: 1100px) {
+      width: 30px;
+      height: 30px;
+    }
+
+    @media (max-width: 700px) {
       width: 20px;
       height: 20px;
+      margin-left: 20px;
     }
   }
 `
