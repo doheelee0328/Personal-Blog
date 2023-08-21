@@ -1,6 +1,6 @@
 import Header from '../../components/header/Header'
 import Sidebar from '../../components/sidebar/Sidebar'
-// import Sidebar from '../../components/sidebar/Sidebar'
+
 // import Post from '../../components/post/Post'
 import { HomeWrapper, PostWrapper } from './Homepage.styled'
 

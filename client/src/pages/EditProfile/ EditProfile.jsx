@@ -38,7 +38,7 @@ const EditProfile = () => {
       dispatch(setName(user.name))
       dispatch(setEmail(user.email))
     }
-  }, [user])
+  }, [user, dispatch])
 
   const updateUser = async () => {
     if (password !== confirmPassword) {
