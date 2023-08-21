@@ -81,4 +81,41 @@ userSchema.statics.login = async function (email, password) {
   return user
 }
 
+userSchema.statics.update = async function (id, name, email, password) {
+  if (!email || !password || !name) {
+    throw new Error('All fields must be filled')
+  }
+  if (!name || !email || !password) {
+    throw new Error('All fields must be filled')
+  }
+  if (!validator.isEmail(email)) {
+    throw new Error('Email is not valid')
+  }
+  if (!validator.isStrongPassword(password)) {
+    throw new Error(
+      'Password not strong enough! Must either contain special characters, capital letters or numbers '
+    )
+  }
+  const user = await this.findById(id)
+  // if this exists
+  if (!user) {
+    throw new Error('Cannot find the user')
+  }
+  // to check if it exists
+  const salt = await bcrpyt.genSalt(10)
+  // generate into a salt
+  const hashPassword = await bcrpyt.hash(password, salt)
+  // hash the password that user created
+
+  // update user information
+
+  user.name = name
+  user.email = email
+  user.password = hashPassword
+
+  await user.save()
+
+  return user
+}
+
 module.exports = mongoose.model('User', userSchema)
