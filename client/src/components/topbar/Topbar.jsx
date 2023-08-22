@@ -7,7 +7,7 @@ import { useToastMessage } from '../../context/Toast'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import Form from '../form/Form'
+import Form from '../Form/Form'
 
 const Topbar = ({ activeRegister, setFilterText, filterText, image }) => {
   const { logout } = useLogout()
@@ -67,13 +67,12 @@ const Topbar = ({ activeRegister, setFilterText, filterText, image }) => {
           </TopList>
         </TopItems>
         <TopItems>
-          {user && (
-            <Link to='profile'>
-              <Image>
-                <img src={image} alt='me' className='topImage' />
-              </Image>
-            </Link>
-          )}
+          <Link to='profile'>
+            <Image>
+              <img src={image} alt='me' className='topImage' />
+            </Image>
+          </Link>
+
           <Form setFilterText={setFilterText} filterText={filterText} />
         </TopItems>
         <ToastContainer style={toastContainerStyle} />

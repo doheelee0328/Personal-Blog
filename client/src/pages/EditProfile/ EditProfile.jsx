@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEditUser } from '../../hooks/useEditUser'
 import { useDeleteUser } from '../../hooks/useDeleteUser'
 
-const EditProfile = ({ setImage, image }) => {
+const EditDeleteProfile = ({ setImage, image }) => {
   const { user } = useAuthContext()
 
   const [name, setName] = useState(user ? user.name : '')
@@ -175,4 +175,4 @@ const EditProfile = ({ setImage, image }) => {
   )
 }
 
-export default EditProfile
+export default EditDeleteProfile

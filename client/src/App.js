@@ -5,7 +5,7 @@ import Post from './components/post/Post.jsx'
 import HomePage from './pages/homepage/Homepage'
 import Login from './pages/login/Login'
 import Register from './pages/register/register'
-import EditProfile from './pages/editProfile/ EditProfile'
+import EditDeleteProfile from './pages/EditProfile/ EditProfile.jsx'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { info } from '../src/components/post/PostInfo'
@@ -63,7 +63,7 @@ function App() {
         />
         <Route
           path='profile'
-          element={<EditProfile image={image} setImage={setImage} />}
+          element={<EditDeleteProfile image={image} setImage={setImage} />}
         />
         <Route path='single-post/:id' element={<SinglePostCard />} />
       </Route>

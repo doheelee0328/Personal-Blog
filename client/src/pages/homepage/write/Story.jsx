@@ -7,9 +7,8 @@ const Paragraph = styled.p`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  font-family: 'Courier New', Courier, monospace;
-  font-style: italic;
   cursor: pointer;
+  margin-top: 20px;
 `
 
 const Story = (props) => {

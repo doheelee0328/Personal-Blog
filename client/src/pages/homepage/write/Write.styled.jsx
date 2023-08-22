@@ -86,4 +86,6 @@ export const ImageWrapper = styled.div`
 `
 export const Paragraph = styled.p`
   font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
 `
