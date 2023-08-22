@@ -41,8 +41,38 @@ const deleteComment = async (req, res) => {
     res.status(400).json({ message: error.message })
   }
 }
+
+const likeComment = async (req, res) => {
+  const id = req.params.id
+  const userID = req.body.userID
+  try {
+    const post = await Comment.findById(id)
+    if (!post.likes.includes(userID)) {
+      await post.updateOne({ $push: { likes: userID } })
+      res.status(200).json('The post has been liked')
+    } else {
+      await post.updateOne({ $pull: { likes: userID } })
+      res.status(200).json('The post has been disliked')
+    }
+  } catch (error) {
+    res.status(400).json({ message: error.message })
+  }
+}
+
+const getComments = async (req, res) => {
+  const id = req.params.id
+  try {
+    const post = await Comment.findById(id)
+    res.status(200).json(post)
+  } catch (error) {
+    res.status(400).json({ message: error.message })
+  }
+}
+
 module.exports = {
   addComment,
   updateComment,
   deleteComment,
+  likeComment,
+  getComments,
 }
