@@ -87,7 +87,8 @@ export const Image = styled.div`
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    margin-top: 8px;
+    margin-top: 3px;
+    transform: translate(20px, 0px);
 
     @media (max-width: 1100px) {
       width: 30px;

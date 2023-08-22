@@ -67,12 +67,13 @@ const Topbar = ({ activeRegister, setFilterText, filterText, image }) => {
           </TopList>
         </TopItems>
         <TopItems>
-          <Link to='profile'>
-            <Image>
-              <img src={image} alt='me' className='topImage' />
-            </Image>
-          </Link>
-
+          {user && (
+            <Link to='profile'>
+              <Image>
+                <img src={image} alt='me' className='topImage' />
+              </Image>
+            </Link>
+          )}
           <Form setFilterText={setFilterText} filterText={filterText} />
         </TopItems>
         <ToastContainer style={toastContainerStyle} />
