@@ -30,7 +30,7 @@ export const useDeleteUser = () => {
   }, [])
 
   const deleteProfiles = async (name, email, password) => {
-    const url = `http://localhost:3000/user/delete/${id}`
+    const url = `http://localhost:3001/user/delete/${id}`
     const data = {
       name: name,
       email: email,

@@ -13,7 +13,7 @@ export const useRegister = () => {
   const register = async (name, email, password) => {
     setSpinner(true)
 
-    const url = 'http://localhost:3000/user/register'
+    const url = 'http://localhost:3001/user/register'
     const data = {
       name: name,
       email: email,
