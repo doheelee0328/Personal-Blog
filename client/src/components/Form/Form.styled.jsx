@@ -9,6 +9,7 @@ export const SearchIcon = styled.i`
 
   @media (max-width: 1100px) {
     font-size: 10px;
+    transform: translate(0px, 7px);
   }
 `
 export const FormContainer = styled.form`
@@ -25,6 +26,7 @@ export const FormContainer = styled.form`
     @media (max-width: 1100px) {
       height: 20px;
       width: 100px;
+      margin-top: 10px;
     }
   }
 

@@ -97,7 +97,7 @@ export const Image = styled.div`
     @media (max-width: 700px) {
       width: 20px;
       height: 20px;
-      margin-left: 20px;
+      transform: translate(20px, 0px);
     }
   }
 `
