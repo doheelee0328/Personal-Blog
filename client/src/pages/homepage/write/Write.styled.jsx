@@ -6,19 +6,22 @@ export const WriteWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  .message-container {
+    margin: 0 auto;
+    width: 20px;
+  }
 `
 export const WriteForm = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 30px;
 `
 export const WriteFormGroup = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 70vw;
+  align-items: center;
 
   .writeInput {
     border: none;
@@ -80,4 +83,7 @@ export const ImageWrapper = styled.div`
     height: 250px;
     margin: 0 auto;
   }
+`
+export const Paragraph = styled.p`
+  font-size: 20px;
 `

@@ -6,6 +6,7 @@ export const SearchIcon = styled.i`
   position: absolute;
   right: 12px;
   top: 8px;
+  transform: translate(0px, -2px);
 
   @media (max-width: 1100px) {
     font-size: 10px;

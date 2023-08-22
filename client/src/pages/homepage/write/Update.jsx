@@ -1,11 +1,9 @@
 import { useState } from 'react'
 import StoryList from './StoryList'
 import Write from './Write'
+import { Paragraph } from './Write.styled'
 const Update = () => {
-  const [story, setStory] = useState([
-    { title: '', id: 1 },
-    { title: '', id: 2 },
-  ])
+  const [story, setStory] = useState([])
 
   const updateList = (enter) => {
     setStory((previous) => {
@@ -20,13 +18,21 @@ const Update = () => {
     setStory(removeStories)
   }
 
-  return (
-    <>
-      <Write updateList={updateList}></Write>
+  let message = <Paragraph>Please Write Your Story Here</Paragraph>
+
+  if (story.length > 0) {
+    message = (
       <StoryList
         story={story}
         removeStoriesHandler={removeStoriesHandler}
       ></StoryList>
+    )
+  }
+
+  return (
+    <>
+      <Write updateList={updateList}></Write>
+      <div className='message-container'>{message}</div>
     </>
   )
 }
