@@ -11,7 +11,7 @@ export const WriteForm = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+
   margin-top: 30px;
 `
 export const WriteFormGroup = styled.div`
