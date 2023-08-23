@@ -4,12 +4,13 @@ import { useGetComments } from '../../hooks/useGetComments'
 import Spinner from '../spinner/Spinner'
 import '../../scss/comment.scss'
 import { useAuthContext } from '../../hooks/useAuthContext'
+import AllComments from '../EditComment/EditComment'
 
-const Comment = () => {
+const Comment = ({ image }) => {
   const [comments, setComments] = useState({
     userId: '',
     description: '',
-    reply: false,
+    editButton: false,
   })
   const { user } = useAuthContext()
   const { addComments, addSpinner } = useAddComments()
@@ -23,7 +24,8 @@ const Comment = () => {
   }
 
   const addClickHandler = async () => {
-    await addComments(comments.description, comments.replyMessage)
+    const profileComment = localStorage.getItem('profile-image')
+    await addComments(comments.description, profileComment)
     setComments((prev) => ({
       ...prev,
       description: '',
@@ -39,11 +41,7 @@ const Comment = () => {
 
     if (getPost.length > 0) {
       message = getPost.map((comment) => (
-        <div key={comment._id}>
-          {comment.name}
-
-          <p>{comment.description}</p>
-        </div>
+        <AllComments key={comment._id} comment={comment} />
       ))
     }
 
@@ -54,7 +52,9 @@ const Comment = () => {
     <div>
       <h2 className='comments-title'>Comments</h2>
       <div className='form'>
+        <img src={image} alt='comment' className='comment-images' />
         {user && user.name}
+
         <input
           type='text'
           onChange={addCommentHandler}
