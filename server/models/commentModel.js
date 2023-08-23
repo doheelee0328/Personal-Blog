@@ -8,9 +8,8 @@ const commentSchema = new Schema(
       type: String,
       required: true,
     },
-    title: {
+    name: {
       type: String,
-      max: 400,
     },
     description: {
       type: String,

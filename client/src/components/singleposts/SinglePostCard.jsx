@@ -11,8 +11,9 @@ import {
 } from './Singlepost.styled'
 import { info } from '../post/PostInfo'
 import { useParams, useNavigate } from 'react-router-dom'
+import Comment from '../comment/Comment'
 
-const SinglePostCard = () => {
+const SinglePostCard = ({ image }) => {
   let { id } = useParams()
 
   const filterPosts = info.find((el) => el.id === parseInt(id))
@@ -46,6 +47,7 @@ const SinglePostCard = () => {
           </SinglePostDescription>
         </div>
       </SinglePost>
+      <Comment image={image} />
       <button onClick={backButton}>Back To The Homepage</button>
     </SinglePostContainer>
   )

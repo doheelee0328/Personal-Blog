@@ -5,6 +5,14 @@ export const SinglePostContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+
+  .comments-title {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    width: 60vw;
+    font-size: 28px;
+  }
 `
 export const SinglePost = styled.div`
   display: flex;

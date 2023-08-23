@@ -65,7 +65,10 @@ function App() {
           path='profile'
           element={<EditDeleteProfile image={image} setImage={setImage} />}
         />
-        <Route path='single-post/:id' element={<SinglePostCard />} />
+        <Route
+          path='single-post/:id'
+          element={<SinglePostCard image={image} />}
+        />
       </Route>
     </Routes>
   )

@@ -13,6 +13,6 @@ router.post('/', addComment)
 router.patch('/:id', updateComment)
 router.delete('/:id', deleteComment)
 router.patch('/:id/like', likeComment)
-router.get('/:id', getComments)
+router.get('/', getComments)
 
 module.exports = router
