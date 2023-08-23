@@ -5,7 +5,7 @@ import Spinner from '../spinner/Spinner'
 import '../../scss/comment.scss'
 import { useAuthContext } from '../../hooks/useAuthContext'
 
-const Comment = ({ image }) => {
+const Comment = () => {
   const [comments, setComments] = useState({
     userId: '',
     description: '',
