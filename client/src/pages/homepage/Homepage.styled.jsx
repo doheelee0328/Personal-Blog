@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const HomeWrapper = styled.div`
   display: flex;
+  justify-content: center;
   width: 90%;
   margin: 0 auto;
 `

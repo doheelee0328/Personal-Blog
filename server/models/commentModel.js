@@ -11,6 +11,9 @@ const commentSchema = new Schema(
     name: {
       type: String,
     },
+    image: {
+      type: String,
+    },
     description: {
       type: String,
       max: 800,

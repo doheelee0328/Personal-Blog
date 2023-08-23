@@ -25,19 +25,19 @@ export const useAddComments = () => {
     }
   }, [])
 
-  const addComments = async (description) => {
+  const addComments = async (description, image) => {
     const url = `http://localhost:3001/comment`
     const data = {
       userID: userData.id,
       description: description,
-      name: userData.name, // Pass the user's name to the comment
+      name: userData.name,
+      image: image,
     }
     console.log(data)
 
     if (description) {
       try {
         const response = await axios.post(url, data)
-        console.log('response', response)
         if (response.status === 201) {
           setAddSpinner(true)
           setTimeout(() => {

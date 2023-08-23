@@ -21,14 +21,14 @@ export const SidebarItem = styled.div`
 export const SideBarTitle = styled.span`
   font-size: 20px;
   font-weight: 600;
-  margin: 10px;
+  margin: 20px;
   padding: 8px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   line-height: 20px;
-  width: 10rem;
+  width: 12rem;
   height: 30%;
 `
 

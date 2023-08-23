@@ -1,10 +1,15 @@
 const Comment = require('../models/commentModel')
 
 const addComment = async (req, res) => {
-  const { userID, description, name } = req.body
+  const { userID, description, name, image } = req.body
 
   try {
-    const newComment = await Comment.create({ userID, description, name })
+    const newComment = await Comment.create({
+      userID,
+      description,
+      name,
+      image,
+    })
     res.status(201).json(newComment)
   } catch (error) {
     res.status(500).send({ message: error.message })
@@ -60,7 +65,7 @@ const likeComment = async (req, res) => {
 
 const getComments = async (req, res) => {
   try {
-    const post = await Comment.find().populate('name').exec()
+    const post = await Comment.find().sort({ _id: -1 })
     res.status(200).json(post)
   } catch (error) {
     res.status(400).json({ message: error.message })

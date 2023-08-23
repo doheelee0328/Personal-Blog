@@ -6,7 +6,7 @@ import HomePage from './pages/homepage/Homepage'
 import Login from './pages/login/Login'
 import Register from './pages/register/register'
 import EditDeleteProfile from './pages/EditProfile/ EditProfile.jsx'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { info } from '../src/components/post/PostInfo'
 import SinglePostCard from './components/singleposts/SinglePostCard'
@@ -20,6 +20,13 @@ function App() {
     setActiveRegister((prev) => !prev)
   }
   const [filterText, setFilterText] = useState('')
+
+  useEffect(() => {
+    const storedImage = localStorage.getItem('profile-image')
+    if (storedImage) {
+      setImage(storedImage)
+    }
+  }, [setImage])
 
   const displayPosts = () => {
     return info
@@ -50,6 +57,7 @@ function App() {
             setFilterText={setFilterText}
             filterText={filterText}
             image={image}
+            setImage={setImage}
           />
         }
       >

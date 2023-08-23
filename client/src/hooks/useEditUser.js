@@ -52,8 +52,9 @@ export const useEditUser = () => {
         setTimeout(() => {
           setSpinner(false)
         }, 1000)
-
+        localStorage.setItem('user', JSON.stringify(response.data))
         dispatch({ type: 'Login', payload: response.data })
+        console.log(response.data)
       } else {
         throw new Error(response.data.error)
       }

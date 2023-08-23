@@ -1,17 +1,8 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 import '../../scss/editProfile.scss'
 
 const Profile = ({ setImage, image }) => {
   const imageRef = useRef(null)
-  // const [image, setImage] = useState(img)
-
-  // Load the image from localStorage when the component mounts
-  useEffect(() => {
-    const storedImage = localStorage.getItem('profile-image')
-    if (storedImage) {
-      setImage(storedImage)
-    }
-  }, [setImage])
 
   const handleImageClick = () => {
     imageRef.current.click()

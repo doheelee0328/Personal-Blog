@@ -10,7 +10,7 @@ export const PostWrapper = styled.div`
 export const ImageWrapper = styled.div`
   .image {
     width: 400px;
-    height: 280px;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
     margin-top: 20px;
