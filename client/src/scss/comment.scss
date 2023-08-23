@@ -1,13 +1,44 @@
 @import './variable';
 
-.profile {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
+.container {
+  @include flexCenter(column, 1px);
+  .comments-title {
+    margin-bottom: 25px;
+  }
+  .form {
+    @include flexCenter(row, 2rem);
+    .image-usr-container {
+      @include flexCenter(column, 1.5rem);
+      .comment-images {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    }
+    .text-container {
+      @include flexCenter(column, 0.5rem);
 
-.comment-images {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+      .add-button {
+        width: 40vw;
+        height: 6vh;
+        border: none;
+        cursor: pointer;
+        font-weight: $boldText;
+        background-color: #e0e0e0;
+
+        &:hover {
+          transform: scale(1);
+          box-shadow: 2px 2px 2px 2px #828282;
+        }
+      }
+    }
+    .input-text {
+      width: 40vw;
+      height: 20vh;
+      border: 1px solid $primaryColor;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
 }

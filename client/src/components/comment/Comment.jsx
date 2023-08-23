@@ -49,18 +49,24 @@ const Comment = ({ image }) => {
   }
 
   return (
-    <div>
+    <div className='container'>
       <h2 className='comments-title'>Comments</h2>
       <div className='form'>
-        <img src={image} alt='comment' className='comment-images' />
-        {user && user.name}
-
-        <input
-          type='text'
-          onChange={addCommentHandler}
-          value={comments.description}
-        />
-        <button onClick={addClickHandler}>Add</button>
+        <div className='image-usr-container'>
+          <img src={image} alt='comment' className='comment-images' />
+          {user && user.name}
+        </div>
+        <div className='text-container'>
+          <textarea
+            type='text'
+            onChange={addCommentHandler}
+            value={comments.description}
+            className='input-text'
+          />
+          <button onClick={addClickHandler} className='add-button'>
+            Add
+          </button>
+        </div>
       </div>
 
       {displayComments()}

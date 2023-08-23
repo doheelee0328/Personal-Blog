@@ -18,21 +18,13 @@ const Update = () => {
     setStory(removeStories)
   }
 
-  let message = <Paragraph>Please Write Your Story Here</Paragraph>
-
-  if (story.length > 0) {
-    message = (
+  return (
+    <>
+      <Write updateList={updateList}></Write>
       <StoryList
         story={story}
         removeStoriesHandler={removeStoriesHandler}
       ></StoryList>
-    )
-  }
-
-  return (
-    <>
-      <Write updateList={updateList}></Write>
-      <div className='message-container'>{message}</div>
     </>
   )
 }
