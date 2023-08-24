@@ -34,13 +34,8 @@ const Comment = ({ image, filterPosts }) => {
 
   useEffect(() => {
     getComments()
-    // refresh every 10 seconds
-    const refreshInterval = setInterval(() => {
-      getComments()
-    }, 1000)
-    return () => clearInterval(refreshInterval)
     // eslint-disable-next-line
-  }, [])
+  }, [getPost])
 
   const displayComments = () => {
     let message = <p className='message'>No Comments? Add here</p>
