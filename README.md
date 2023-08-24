@@ -51,6 +51,6 @@ To get started with the server, follow these steps:
 ####  Comments:
 - GET /comment: Retrieves all comments.
 - POST /comment: Allows users to add comments.
-- PATCH /comment/:id: Allows users to edit comments.
-- DELETE /comment/:id: Allows users to delete comments.
+- PATCH /comment/:id : Allows users to edit comments.
+- DELETE /comment/:id : Allows users to delete comments.
 - PATCH /comment/:id/like: Allows users to like and dislike comments.
