@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import StoryList from './StoryList'
 import Write from './Write'
-import { Paragraph } from './Write.styled'
+
 const Update = () => {
   const [story, setStory] = useState([])
 

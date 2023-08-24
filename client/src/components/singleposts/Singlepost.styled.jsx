@@ -17,13 +17,19 @@ export const SinglePostContainer = styled.div`
 export const SinglePost = styled.div`
   display: flex;
   flex-direction: column;
-
+  /* justify-content: center;
+  align-items: center; */
   margin: 40px;
 
   .image {
     width: 70vw;
     height: 60vh;
     object-fit: cover;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
   }
 `
 

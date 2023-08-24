@@ -77,11 +77,10 @@ const Topbar = ({
         <TopItems>
           {user && (
             <Link to='profile'>
-              <Image>
-                <img src={image} alt='me' className='topImage' />
-              </Image>
+              <Image src={image} alt='me' />
             </Link>
           )}
+
           <Form setFilterText={setFilterText} filterText={filterText} />
         </TopItems>
         <ToastContainer style={toastContainerStyle} />

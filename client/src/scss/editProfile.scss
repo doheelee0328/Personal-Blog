@@ -21,12 +21,21 @@
       font-size: 16px;
       margin-top: 10px;
       font-weight: $boldText;
+
+      @media (max-width: 580px) {
+        font-size: 13px;
+      }
     }
     .inputs {
       width: $width;
       height: $height;
       border: none;
       box-shadow: 2px 1px 1px 1px #828282;
+
+      @media (max-width: 580px) {
+        width: 60vw;
+        height: 5vh;
+      }
 
       &:focus {
         outline: none;
@@ -48,6 +57,11 @@
         box-shadow: 2px 2px 2px 2px #828282;
         margin-bottom: 20px;
         margin: 0 auto;
+
+        @media (max-width: 580px) {
+          width: 150px;
+          height: 150px;
+        }
       }
 
       .email-password {
@@ -64,6 +78,12 @@
           cursor: pointer;
           background-color: transparent;
           font-weight: $boldText;
+
+          @media (max-width: 580px) {
+            width: 30vw;
+            height: 5vh;
+            font-size: 12px;
+          }
 
           &:hover {
             transform: scale(1.1);

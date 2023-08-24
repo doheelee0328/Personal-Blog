@@ -4,8 +4,9 @@ import { useDeleteComments } from '../../hooks/useDeleteComment'
 import axios from 'axios'
 import { useToastMessage } from '../../context/Toast'
 import jwtDecode from 'jwt-decode'
+import '../../scss/comment.scss'
 
-const AllComments = ({ comment }) => {
+const AllComments = ({ comment, filterPosts }) => {
   const [editMode, setEditMode] = useState(false)
   const [editComment, setEditComment] = useState('')
   const [like, setLike] = useState(comment.likes.length)
@@ -42,57 +43,106 @@ const AllComments = ({ comment }) => {
   const editClickHandler = async (id) => {
     await editComments(editComment, id)
     setEditComment('')
+    setEditMode(false)
   }
 
   const deleteClickHandler = async (id) => {
     await deleteComments(id)
   }
 
-  const likeClickHandler = (id) => {
+  const likeClickHandler = async (id) => {
     const url = `http://localhost:3001/comment/${id}/like`
     const data = { userID: userId }
     try {
-      axios.patch(url, data)
+      await axios.patch(url, data)
+      setLike(isLike ? like - 1 : like + 1)
+      setIsLike(!isLike)
+      successMessage(
+        isLike
+          ? 'it has been disliked successfully'
+          : 'it has been lliked successfully'
+      )
     } catch (error) {
-      errorMessage('There has been a problem')
+      errorMessage(error.response.data.error)
     }
-    // errorMessage('Error liking/disliking comment:', error)
-    setLike(isLike ? like - 1 : like + 1)
-    setIsLike(!isLike)
-    successMessage(
-      isLike
-        ? 'it has been disliked successfully'
-        : 'it has been like successfully'
-    )
+  }
+
+  const formDate = () => {
+    return new Date().toLocaleString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    })
   }
 
   return (
-    <div>
-      <p>{comment.name}</p>
-      <p>{comment.description}</p>
+    <div className='comment-container'>
+      {editMode && (
+        <div className='name-description-container'>
+          <div className='name-date-container'>
+            <span span className='commennt-nmae'>
+              {comment.name}
+            </span>
+            <span className='date'>{formDate()}</span>
+          </div>
+          <span className='commnet-description'>{comment.description}</span>
+        </div>
+      )}
       {editMode ? (
-        <div>
-          <input
+        <div className='update-container'>
+          <textarea
             type='text'
             value={editComment}
             onChange={(e) => setEditComment(e.target.value)}
+            className='input-text'
           />
-          <button onClick={() => editClickHandler(comment._id)}>Update</button>
-          <button onClick={() => setEditMode(false)}>Cancel</button>
+          <div className='button-container'>
+            <button
+              onClick={() => editClickHandler(comment._id)}
+              className='buttons'
+            >
+              Update
+            </button>
+            <button onClick={() => setEditMode(false)} className='buttons'>
+              Cancel
+            </button>
+          </div>
         </div>
       ) : (
-        <button onClick={toggleEditMode}>Edit</button>
-      )}
-      <button onClick={() => deleteClickHandler(comment._id)}>Delete</button>
-      <span onClick={() => likeClickHandler(comment._id)}>
-        {isLike ? (
-          <i className='fa-regular fa-thumbs-up'></i>
-        ) : (
-          <i class='fa-regular fa-thumbs-down'></i>
-        )}
-      </span>
+        <div className='button-container'>
+          <div className='name-description-container'>
+            <div className='name-date-container'>
+              <span span className='commennt-nmae'>
+                {comment.name}
+              </span>
+              <span className='date'>{formDate()}</span>
+            </div>
+          </div>
+          <span className='commnet-description'>{comment.description}</span>
 
-      <span>{like} people like it</span>
+          <i
+            className='fa-regular fa-pen-to-square'
+            onClick={toggleEditMode}
+          ></i>
+          <i
+            className='fa-regular fa-trash-can'
+            onClick={() => deleteClickHandler(comment._id)}
+          ></i>
+        </div>
+      )}
+      <div className='like-container'>
+        <span onClick={() => likeClickHandler(comment._id)}>
+          {isLike ? (
+            <i className='fa-solid fa-heart'></i>
+          ) : (
+            <i className='fa-regular fa-heart'></i>
+          )}
+        </span>
+        <div className='another-like-container'>
+          <span>{like}</span>
+          <span>{like === 0 && like === 1 ? 'likes' : 'like'}</span>
+        </div>
+      </div>
     </div>
   )
 }

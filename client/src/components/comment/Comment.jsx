@@ -6,7 +6,7 @@ import '../../scss/comment.scss'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import AllComments from '../EditComment/EditComment'
 
-const Comment = ({ image }) => {
+const Comment = ({ image, filterPosts }) => {
   const [comments, setComments] = useState({
     userId: '',
     description: '',
@@ -34,14 +34,24 @@ const Comment = ({ image }) => {
 
   useEffect(() => {
     getComments()
-  }, [getComments])
+    // refresh every 10 seconds
+    const refreshInterval = setInterval(() => {
+      getComments()
+    }, 1000)
+    return () => clearInterval(refreshInterval)
+    // eslint-disable-next-line
+  }, [])
 
   const displayComments = () => {
-    let message = <p>No Comments? Add here</p>
+    let message = <p className='message'>No Comments? Add here</p>
 
     if (getPost.length > 0) {
       message = getPost.map((comment) => (
-        <AllComments key={comment._id} comment={comment} />
+        <AllComments
+          key={comment._id}
+          comment={comment}
+          filterPosts={filterPosts}
+        />
       ))
     }
 
@@ -49,31 +59,31 @@ const Comment = ({ image }) => {
   }
 
   return (
-    <div className='container'>
-      <h2 className='comments-title'>Comments</h2>
-      <div className='form'>
-        <div className='image-usr-container'>
-          <img src={image} alt='comment' className='comment-images' />
-          {user && user.name}
-        </div>
-        <div className='text-container'>
-          <textarea
-            type='text'
-            onChange={addCommentHandler}
-            value={comments.description}
-            className='input-text'
-          />
-          <button onClick={addClickHandler} className='add-button'>
-            Add
-          </button>
+    <>
+      <div className='container'>
+        <h2 className='comments-title'>Comments</h2>
+        <div className='form'>
+          <div className='image-usr-container'>
+            <img src={image} alt='comment' className='comment-images' />
+            {user && user.name}
+          </div>
+          <div className='text-container'>
+            <textarea
+              type='text'
+              onChange={addCommentHandler}
+              value={comments.description}
+              className='input-text'
+            />
+            <button onClick={addClickHandler} className='add-button'>
+              Add
+            </button>
+          </div>
         </div>
       </div>
-
       {displayComments()}
-
       <div>{addSpinner && <Spinner />}</div>
       <div>{getSpinner && <Spinner />}</div>
-    </div>
+    </>
   )
 }
 

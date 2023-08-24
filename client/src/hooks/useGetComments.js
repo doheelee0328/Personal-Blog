@@ -15,6 +15,7 @@ export const useGetComments = () => {
     try {
       const response = await axios.get(url)
       if (response.status === 200) {
+        // window.location.reload(true)
         setGetPost(response.data)
         setGetSpinner(false)
       }

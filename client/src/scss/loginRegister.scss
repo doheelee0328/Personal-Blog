@@ -30,11 +30,20 @@
     color: white;
     padding-bottom: 30px;
     text-shadow: 2px 2px #000000;
+    margin-top: 100px;
+
+    @media (max-width: 550px) {
+      font-size: 40px;
+    }
 
     // copy and paste the variables
   }
   .email-password-container {
     @include flexCenter(column, 10px);
+
+    @media (max-width: 550px) {
+      @include flexCenter(column, 5px);
+    }
 
     padding-bottom: 10px;
 
@@ -42,6 +51,10 @@
       color: $grey;
       font-weight: $boldText;
       margin-bottom: 4px;
+
+      @media (max-width: 550px) {
+        font-size: 13px;
+      }
     }
 
     .inputs {
@@ -50,6 +63,11 @@
       border: none;
       box-shadow: 2px 2px 2px 2px #828282;
       margin-bottom: 10px;
+
+      @media (max-width: 550px) {
+        width: 80vw;
+        height: 5vh;
+      }
 
       &:focus {
         outline: none;
@@ -67,6 +85,12 @@
     cursor: pointer;
     margin-bottom: 20px;
 
+    @media (max-width: 550px) {
+      width: 80vw;
+      height: 5vh;
+      font-size: 12px;
+    }
+
     &:hover {
       transform: scale(1.1);
       box-shadow: 2px 2px 2px 2px #828282;
@@ -77,10 +101,15 @@
     @include flexCenter(row, 10px);
     .new-user {
       font-weight: $boldText;
+      @media (max-width: 550px) {
+        font-size: 12px;
+      }
     }
     .link-different-page {
       color: $primaryColor;
-
+      @media (max-width: 550px) {
+        font-size: 12px;
+      }
       &:hover {
         transform: scale(1.1);
       }

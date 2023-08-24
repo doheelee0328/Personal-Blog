@@ -2,11 +2,14 @@
 
 .container {
   @include flexCenter(column, 1px);
+
+  position: relative;
   .comments-title {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
   }
   .form {
     @include flexCenter(row, 2rem);
+    margin-left: -70px;
     .image-usr-container {
       @include flexCenter(column, 1.5rem);
       .comment-images {
@@ -41,4 +44,98 @@
       }
     }
   }
+  .message {
+    font-size: 22px;
+    margin-top: 40px;
+  }
+}
+
+.comment-container {
+  @include flexCenter(column, 10px);
+  width: 70vw;
+  height: auto;
+  margin-top: 50px;
+
+  .button {
+    width: 5vw;
+    height: 5vh;
+    background-color: transparent;
+    margin-top: 20px;
+    &:hover {
+      transform: scale(1);
+      box-shadow: 2px 2px 2px 2px #828282;
+    }
+  }
+
+  padding: 10px;
+  .name-description-container {
+    @include flexCenter(row, 20px);
+
+    .name-date-container {
+      @include flexCenter(column, 2px);
+      margin-right: 10px;
+      .commennt-nmae {
+        margin-top: -20px;
+        font-size: 20px;
+        font-weight: $boldText;
+      }
+
+      .date {
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+
+    .commnet-description {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
+  .button-container {
+    @include flexCenter(row, 1rem);
+    .fa-pen-to-square {
+      color: #327aed;
+      cursor: pointer;
+    }
+    .fa-trash-can {
+      color: #ba1b13;
+      cursor: pointer;
+    }
+  }
+  .like-container {
+    @include flexCenter(row, 1rem);
+    margin-bottom: 20px;
+    .another-like-container {
+      @include flexCenter(row, 3px);
+    }
+  }
+  .update-container {
+    .input-text {
+      width: 40vw;
+      height: 20vh;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    .buttons {
+      width: 10vw;
+      height: 5vh;
+      background-color: transparent;
+
+      &:hover {
+        transform: scale(1);
+        box-shadow: 2px 2px 2px 2px #828282;
+      }
+    }
+  }
+}
+
+.message {
+  margin-top: 30px;
+  font-size: 20px;
+  margin-left: 50px;
+  margin-bottom: 50px;
 }

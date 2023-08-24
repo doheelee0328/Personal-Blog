@@ -12,9 +12,8 @@ const HomePage = ({ displayPosts }) => {
         <PostWrapper>
           <div>{displayPosts()}</div>
         </PostWrapper>
-        <div className='side-bar'>
-          <Sidebar />
-        </div>
+
+        <Sidebar />
       </HomeWrapper>
     </>
   )

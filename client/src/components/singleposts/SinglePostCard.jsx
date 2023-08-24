@@ -1,5 +1,5 @@
 // import lifeImage from '../../image/Life.jpeg'
-import EditDelete from '../icons /EditDelete'
+
 import {
   SinglePost,
   SinglePostTitle,
@@ -10,19 +10,13 @@ import {
   SinglePostContainer,
 } from './Singlepost.styled'
 import { info } from '../post/PostInfo'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Comment from '../comment/Comment'
 
 const SinglePostCard = ({ image }) => {
   let { id } = useParams()
 
   const filterPosts = info.find((el) => el.id === parseInt(id))
-
-  const navigate = useNavigate()
-
-  const backButton = () => {
-    navigate('/')
-  }
 
   return (
     <SinglePostContainer className='single-post-container'>
@@ -34,7 +28,7 @@ const SinglePostCard = ({ image }) => {
             className='image'
           />
           <SinglePostTitle>{filterPosts.title}</SinglePostTitle>
-          <EditDelete />
+
           <SinglePostInfo>
             <Span>
               <strong>Author:</strong>
@@ -47,8 +41,7 @@ const SinglePostCard = ({ image }) => {
           </SinglePostDescription>
         </div>
       </SinglePost>
-      <Comment image={image} />
-      <button onClick={backButton}>Back To The Homepage</button>
+      <Comment image={image} filterPosts={filterPosts} />
     </SinglePostContainer>
   )
 }
