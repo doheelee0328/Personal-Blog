@@ -83,22 +83,20 @@ export const Items = styled.span`
 `
 
 export const Image = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 3px;
+  transform: translate(20px, 0px);
 
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-top: 3px;
+  @media (max-width: 1100px) {
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (max-width: 700px) {
+    width: 20px;
+    height: 20px;
     transform: translate(20px, 0px);
-
-    @media (max-width: 1100px) {
-      width: 30px;
-      height: 30px;
-    }
-
-    @media (max-width: 700px) {
-      width: 20px;
-      height: 20px;
-      transform: translate(20px, 0px);
-    }
   }
 `
