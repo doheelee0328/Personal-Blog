@@ -25,7 +25,7 @@ export const useEditComments = () => {
   const editComments = async (description, id) => {
     setEditSpinner(false)
 
-    const url = `http://localhost:3001/comment/${id}`
+    const url = `https://backend-personalblog.onrender.com/comment/${id}`
     const data = {
       userID: userData,
       description: description,

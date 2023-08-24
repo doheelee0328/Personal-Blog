@@ -19,7 +19,7 @@ export const useLogin = () => {
   const login = async (email, password) => {
     setSpinner(true)
 
-    const url = 'http://localhost:3001/user/login'
+    const url = 'https://backend-personalblog.onrender.com/user/login'
     const data = {
       email: email,
       password: password,

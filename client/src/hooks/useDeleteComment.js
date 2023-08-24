@@ -8,7 +8,7 @@ export const useDeleteComments = () => {
   const { successMessage, errorMessage } = useToastMessage()
 
   const deleteComments = async (id) => {
-    const url = `http://localhost:3001/comment/${id}`
+    const url = `https://backend-personalblog.onrender.com/comment/${id}`
 
     try {
       const response = await axios.delete(url)

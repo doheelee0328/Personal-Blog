@@ -28,7 +28,7 @@ export const useEditUser = () => {
   }, [])
 
   const editProfiles = async (name, email, password) => {
-    const url = `http://localhost:3001/user/update/${id}`
+    const url = `https://backend-personalblog.onrender.com/user/update/${id}`
     const data = {
       name: name,
       email: email,

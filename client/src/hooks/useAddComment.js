@@ -26,7 +26,7 @@ export const useAddComments = () => {
   }, [])
 
   const addComments = async (description, image) => {
-    const url = `http://localhost:3001/comment`
+    const url = `https://backend-personalblog.onrender.com/comment`
     const data = {
       userID: userData.id,
       description: description,

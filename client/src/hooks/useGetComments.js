@@ -9,7 +9,7 @@ export const useGetComments = () => {
   const { errorMessage } = useToastMessage()
 
   const getComments = async () => {
-    const url = `http://localhost:3001/comment`
+    const url = `https://backend-personalblog.onrender.com/comment`
     console.log(url)
 
     try {

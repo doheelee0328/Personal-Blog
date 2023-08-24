@@ -51,7 +51,7 @@ const AllComments = ({ comment, filterPosts }) => {
   }
 
   const likeClickHandler = async (id) => {
-    const url = `http://localhost:3001/comment/${id}/like`
+    const url = `https://backend-personalblog.onrender.com/comment/${id}/like`
     const data = { userID: userId }
     try {
       await axios.patch(url, data)
