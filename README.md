@@ -62,7 +62,8 @@ To get started with the server, follow these steps:
 <img width="725" alt="Screenshot 2023-08-24 at 20 42 51" src="https://github.com/doheelee0328/personal-Blog/assets/112406576/986f10c0-af61-49dc-b0a8-6c8f85c9ecf5">
 <img width="725" alt="Screenshot 2023-08-24 at 20 43 01" src="https://github.com/doheelee0328/personal-Blog/assets/112406576/53de1a88-cff9-446f-803c-65d463a532a1">
 <img width="725" alt="Screenshot 2023-08-24 at 20 43 18" src="https://github.com/doheelee0328/personal-Blog/assets/112406576/4424b364-1cad-4d87-aafc-f9494e0b5a14">
-![Screenshot 2023-08-24 at 20 43 42](https://github.com/doheelee0328/personal-Blog/assets/112406576/c4a2cb45-3233-4cc3-9940-5e9bbad3e55e)
-![Screenshot 2023-08-24 at 20 43 49](https://github.com/doheelee0328/personal-Blog/assets/112406576/a12cbc07-3c2e-43ef-aedf-2f687b9e9724)
+<img width="725" alt="Screenshot 2023-08-24 at 20 43 18" src="https://github.com/doheelee0328/personal-Blog/assets/112406576/c4a2cb45-3233-4cc3-9940-5e9bbad3e55e">
+<img width="725" alt="Screenshot 2023-08-24 at 20 43 18" src="https://github.com/doheelee0328/personal-Blog/assets/112406576/a12cbc07-3c2e-43ef-aedf-2f687b9e9724)">
+
 
 
