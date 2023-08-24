@@ -2,7 +2,7 @@
 
 Welcome to my personal blog, where you can learn more about me and explore various features related to user registration, profile management, and interacting with blog posts through comments.
 
-Behold, the demo video of my application! This video showcases the remarkable features and functionalities that make my app stand out. Watch as we navigate through its intuitive interface, demonstrating how it simplifies complex tasks and enhances user experiences.
+Behold, the demo video of my application! The link below is the video showcases the remarkable features and functionalities that make my app stand out. Watch as we navigate through its intuitive interface, demonstrating how it simplifies complex tasks and enhances user experiences.
 
 https://drive.google.com/file/d/1dTA6yNfwTXCtJ9qGYucjPytCO9JTMYqu/view?usp=sharing
 
