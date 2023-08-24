@@ -3,7 +3,9 @@
 Welcome to my personal blog, where you can learn more about me and explore various features related to user registration, profile management, and interacting with blog posts through comments.
 
 Here is the demoed 
-![Uploading ezgif.com-gif-maker.gif…]()
+
+![Uploading ezgif.com-gif-maker (1).gif…]()
+
 
 ## Client
 
