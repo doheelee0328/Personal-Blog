@@ -2,7 +2,8 @@
 
 Welcome to my personal blog, where you can learn more about me and explore various features related to user registration, profile management, and interacting with blog posts through comments.
 
-https://drive.google.com/file/d/1Zu9GbutHq6ZNs9277uRuDaLz2myPRr2Q/view?usp=sharing
+Here is the demoed 
+![Uploading ezgif.com-gif-maker.gif…]()
 
 ## Client
 
