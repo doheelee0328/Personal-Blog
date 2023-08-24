@@ -2,10 +2,9 @@
 
 Welcome to my personal blog, where you can learn more about me and explore various features related to user registration, profile management, and interacting with blog posts through comments.
 
-Here is the demoed 
+Behold, the demo video of my application! This video showcases the remarkable features and functionalities that make my app stand out. Watch as we navigate through its intuitive interface, demonstrating how it simplifies complex tasks and enhances user experiences.
 
-![Uploading ezgif.com-gif-maker (1).gif…]()
-
+https://drive.google.com/file/d/1dTA6yNfwTXCtJ9qGYucjPytCO9JTMYqu/view?usp=sharing
 
 ## Client
 
@@ -57,3 +56,13 @@ To get started with the server, follow these steps:
 - PATCH /comment/:id : Allows users to edit comments.
 - DELETE /comment/:id : Allows users to delete comments.
 - PATCH /comment/:id/like: Allows users to like and dislike comments.
+
+## Final Looks
+<img width="719" alt="Screenshot 2023-08-24 at 20 42 42" src="https://github.com/doheelee0328/personal-Blog/assets/112406576/197a46b6-505b-49c0-a202-5281f0d4f3ee">
+<img width="725" alt="Screenshot 2023-08-24 at 20 42 51" src="https://github.com/doheelee0328/personal-Blog/assets/112406576/986f10c0-af61-49dc-b0a8-6c8f85c9ecf5">
+<img width="1427" alt="Screenshot 2023-08-24 at 20 43 01" src="https://github.com/doheelee0328/personal-Blog/assets/112406576/53de1a88-cff9-446f-803c-65d463a532a1">
+<img width="1207" alt="Screenshot 2023-08-24 at 20 43 18" src="https://github.com/doheelee0328/personal-Blog/assets/112406576/4424b364-1cad-4d87-aafc-f9494e0b5a14">
+![Screenshot 2023-08-24 at 20 43 42](https://github.com/doheelee0328/personal-Blog/assets/112406576/acb2a83e-5dd2-42bc-8b75-cc5c8cf955b1)
+![Screenshot 2023-08-24 at 20 43 49](https://github.com/doheelee0328/personal-Blog/assets/112406576/114c6a59-f679-4846-9d0d-993776af249b)
+
+
