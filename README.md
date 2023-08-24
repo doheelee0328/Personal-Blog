@@ -34,7 +34,10 @@ To get started with the client, follow these steps:
 To get started with the server, follow these steps:
 
 - Run the command npm install to install the necessary dependencies.
-- Create an environment file and store the MongoDB URL and the desired port number.
+- Create an environment file (e.g., .env) and configure the following variables:
+     - MONGODB_URL: The URL of your MongoDB database.
+     - PORT: The desired port number for the server.
+     - SECRET: The desired secret key for the JWT (JSON Web Token) signing process to work securely.
 - Run the command npm run dev to start the server.
 
 ### API Endpoints 
