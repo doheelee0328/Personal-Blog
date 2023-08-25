@@ -3,7 +3,7 @@ import img from '../../image/blankProfile.webp'
 import { TopItems, TopWrapper, Image, TopList, Items } from './TopBar.styled'
 import { NavLink, Outlet, Link } from 'react-router-dom'
 import { useLogout } from '../../hooks/useLogout'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useToastMessage } from '../../context/Toast'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { ToastContainer } from 'react-toastify'
@@ -23,6 +23,10 @@ const Topbar = ({
   const { user } = useAuthContext()
 
   const navigate = useNavigate()
+
+  const location = useLocation()
+
+  const homepage = location.pathname === '/'
 
   const activeStyle = {
     textDecoration: 'underline',
@@ -80,8 +84,9 @@ const Topbar = ({
               <Image src={image} alt='me' />
             </Link>
           )}
-
-          <Form setFilterText={setFilterText} filterText={filterText} />
+          {homepage && (
+            <Form setFilterText={setFilterText} filterText={filterText} />
+          )}
         </TopItems>
         <ToastContainer style={toastContainerStyle} />
       </TopWrapper>
