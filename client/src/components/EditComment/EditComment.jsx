@@ -30,7 +30,6 @@ const AllComments = ({ comment, filterPosts }) => {
     if (token) {
       try {
         const decodedToken = jwtDecode(token.token)
-        console.log(decodedToken._id)
         setUserID(decodedToken._id)
       } catch (error) {
         console.log('Error decoding token:', error)
@@ -52,7 +51,7 @@ const AllComments = ({ comment, filterPosts }) => {
       setEditComment('')
       setEditMode(false)
     } else {
-      errorMessage('Plese sign in to edit your post')
+      errorMessage('Please sign in to edit your post')
     }
   }
 
@@ -60,7 +59,7 @@ const AllComments = ({ comment, filterPosts }) => {
     if (user) {
       await deleteComments(id)
     } else {
-      errorMessage('Plese sign in to delete your post')
+      errorMessage('Please sign in to delete your post')
     }
   }
 
