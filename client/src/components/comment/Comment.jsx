@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useAddComments } from '../../hooks/useAddComment'
 import { useGetComments } from '../../hooks/useGetComments'
+import {
+  SpinnerGetContainer,
+  SpinnerAddContainer,
+} from '../spinner/Spinner.styled'
 import Spinner from '../spinner/Spinner'
 import '../../scss/comment.scss'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import AllComments from '../EditComment/EditComment'
+import { useToastMessage } from '../../context/Toast'
 
 const Comment = ({ image, filterPosts }) => {
   const [comments, setComments] = useState({
@@ -15,6 +20,7 @@ const Comment = ({ image, filterPosts }) => {
   const { user } = useAuthContext()
   const { addComments, addSpinner } = useAddComments()
   const { getComments, getSpinner, getPost } = useGetComments()
+  const { errorMessage } = useToastMessage()
 
   const addCommentHandler = (e) => {
     setComments((prev) => ({
@@ -24,12 +30,20 @@ const Comment = ({ image, filterPosts }) => {
   }
 
   const addClickHandler = async () => {
-    const profileComment = localStorage.getItem('profile-image')
-    await addComments(comments.description, profileComment)
-    setComments((prev) => ({
-      ...prev,
-      description: '',
-    }))
+    if (user) {
+      const profileComment = localStorage.getItem('profile-image')
+      await addComments(comments.description, profileComment)
+      setComments((prev) => ({
+        ...prev,
+        description: '',
+      }))
+    } else {
+      errorMessage('Please sign in to make a comment')
+      setComments((prev) => ({
+        ...prev,
+        description: '',
+      }))
+    }
   }
 
   useEffect(() => {
@@ -75,9 +89,22 @@ const Comment = ({ image, filterPosts }) => {
           </div>
         </div>
       </div>
-      {displayComments()}
-      <div>{addSpinner && <Spinner />}</div>
-      <div>{getSpinner && <Spinner />}</div>
+
+      <div>
+        {addSpinner && (
+          <SpinnerAddContainer>
+            <Spinner />
+          </SpinnerAddContainer>
+        )}
+      </div>
+
+      {getSpinner ? (
+        <SpinnerGetContainer>
+          <Spinner />
+        </SpinnerGetContainer>
+      ) : (
+        displayComments()
+      )}
     </>
   )
 }

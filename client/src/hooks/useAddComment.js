@@ -42,7 +42,7 @@ export const useAddComments = () => {
           setAddSpinner(true)
           setTimeout(() => {
             setAddSpinner(false)
-          }, 500)
+          }, 200)
           successMessage('Post has been added successfully')
         }
       } catch (error) {

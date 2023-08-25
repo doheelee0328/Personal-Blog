@@ -17,7 +17,9 @@ export const useGetComments = () => {
       if (response.status === 200) {
         // window.location.reload(true)
         setGetPost(response.data)
-        setGetSpinner(false)
+        setTimeout(() => {
+          setGetSpinner(false)
+        }, 600)
       }
     } catch (error) {
       errorMessage(error.response.data.error)

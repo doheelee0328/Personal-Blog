@@ -19,3 +19,10 @@ export const SpinnerEditContainer = styled.div`
   margin: auto;
   transform: translate(0px, 30px);
 `
+export const SpinnerGetContainer = styled.div`
+  transform: translate(20px, 30px);
+`
+
+export const SpinnerAddContainer = styled.div`
+  transform: translate(20px, 30px);
+`

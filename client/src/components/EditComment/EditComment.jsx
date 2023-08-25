@@ -3,6 +3,7 @@ import { useEditComments } from '../../hooks/useEditComment'
 import { useDeleteComments } from '../../hooks/useDeleteComment'
 import axios from 'axios'
 import { useToastMessage } from '../../context/Toast'
+import { useAuthContext } from '../../hooks/useAuthContext'
 import jwtDecode from 'jwt-decode'
 import '../../scss/comment.scss'
 
@@ -14,6 +15,7 @@ const AllComments = ({ comment, filterPosts }) => {
   const [userId, setUserID] = useState('')
 
   const { editComments } = useEditComments()
+  const { user } = useAuthContext()
   const { deleteComments } = useDeleteComments()
 
   const { successMessage, errorMessage } = useToastMessage()
@@ -37,33 +39,49 @@ const AllComments = ({ comment, filterPosts }) => {
   }, [])
 
   const toggleEditMode = () => {
-    setEditMode(!editMode)
+    if (user) {
+      setEditMode(!editMode)
+    } else {
+      errorMessage('Plese sign in to edit your post')
+    }
   }
 
   const editClickHandler = async (id) => {
-    await editComments(editComment, id)
-    setEditComment('')
-    setEditMode(false)
+    if (user) {
+      await editComments(editComment, id)
+      setEditComment('')
+      setEditMode(false)
+    } else {
+      errorMessage('Plese sign in to edit your post')
+    }
   }
 
   const deleteClickHandler = async (id) => {
-    await deleteComments(id)
+    if (user) {
+      await deleteComments(id)
+    } else {
+      errorMessage('Plese sign in to delete your post')
+    }
   }
 
   const likeClickHandler = async (id) => {
     const url = `https://backend-personalblog.onrender.com/comment/${id}/like`
     const data = { userID: userId }
-    try {
-      await axios.patch(url, data)
-      setLike(isLike ? like - 1 : like + 1)
-      setIsLike(!isLike)
-      successMessage(
-        isLike
-          ? 'it has been disliked successfully'
-          : 'it has been lliked successfully'
-      )
-    } catch (error) {
-      errorMessage(error.response.data.error)
+    if (user) {
+      try {
+        await axios.patch(url, data)
+        setLike(isLike ? like - 1 : like + 1)
+        setIsLike(!isLike)
+        successMessage(
+          isLike
+            ? 'it has been disliked successfully'
+            : 'it has been lliked successfully'
+        )
+      } catch (error) {
+        errorMessage(error.response.data.error)
+      }
+    } else {
+      errorMessage('Please sign in to like the comment')
     }
   }
 

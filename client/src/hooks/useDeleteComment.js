@@ -19,7 +19,7 @@ export const useDeleteComments = () => {
         successMessage('Post has been deleted successfully')
       }
     } catch (error) {
-      errorMessage(error.response.data.error)
+      errorMessage(error.response.data.message)
     }
   }
 
