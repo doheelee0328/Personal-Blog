@@ -74,7 +74,7 @@ const AllComments = ({ comment, filterPosts }) => {
         successMessage(
           isLike
             ? 'it has been disliked successfully'
-            : 'it has been lliked successfully'
+            : 'it has been liked successfully'
         )
       } catch (error) {
         errorMessage(error.response.data.error)
