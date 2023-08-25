@@ -28,7 +28,9 @@ const updateComment = async (req, res) => {
       await post.save()
       res.status(200).send(post)
     } else {
-      res.status(403).json({ message: 'you are not authorised to post' })
+      res
+        .status(403)
+        .json({ message: 'You are not authorised to edit the post' })
     }
   } catch (error) {
     res.status(400).json({ message: error.message })
@@ -39,8 +41,14 @@ const deleteComment = async (req, res) => {
   const id = req.params.id
   try {
     const post = await Comment.findById(id)
-    await post.deleteOne()
-    res.status(200).json({ message: 'It has been deleted successfully' })
+    if (post.userID === req.body.userID) {
+      await post.deleteOne()
+      res.status(200).json({ message: 'It has been deleted successfully' })
+    } else {
+      res
+        .status(403)
+        .json({ message: 'You are not authorised to delete the post' })
+    }
   } catch (error) {
     res.status(400).json({ message: error.message })
   }
