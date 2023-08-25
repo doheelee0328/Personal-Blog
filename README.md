@@ -4,8 +4,6 @@ Welcome to my personal blog, where you can learn more about me and explore vario
 
 Behold, the demo video of my application! The link below is the video showcases the remarkable features and functionalities that make my app stand out. Watch as we navigate through its intuitive interface, demonstrating how it simplifies complex tasks and enhances user experiences.
 
-https://drive.google.com/file/d/1dTA6yNfwTXCtJ9qGYucjPytCO9JTMYqu/view?usp=sharing
-
 ## Client
 
 ### How to Run the Client 
