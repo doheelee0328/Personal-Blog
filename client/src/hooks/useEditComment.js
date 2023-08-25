@@ -40,7 +40,7 @@ export const useEditComments = () => {
         }
       } catch (error) {
         setEditSpinner(false)
-        errorMessage('Cannot Edit')
+        errorMessage(error.response.data.message)
       }
     } else {
       errorMessage('Please write a comment')
