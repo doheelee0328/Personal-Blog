@@ -104,17 +104,19 @@
   }
   .like-container {
     @include flexCenter(row, 1rem);
+    transform: translate(40px, 0px);
     margin-bottom: 20px;
     .another-like-container {
       @include flexCenter(row, 3px);
     }
   }
   .update-container {
+    transform: translate(37px, 0px);
     .input-text {
       width: 40vw;
       height: 20vh;
       margin-top: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
 
       &:focus {
         outline: none;
@@ -124,10 +126,18 @@
       width: 10vw;
       height: 5vh;
       background-color: transparent;
-
+      margin-bottom: 20px;
       &:hover {
         transform: scale(1);
         box-shadow: 2px 2px 2px 2px #828282;
+      }
+
+      @media (max-width: 670px) {
+        font-size: 12px;
+      }
+
+      @media (max-width: 500px) {
+        font-size: 10px;
       }
     }
   }

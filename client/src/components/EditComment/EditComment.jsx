@@ -148,7 +148,7 @@ const AllComments = ({ comment, filterPosts }) => {
         </div>
       )}
       <div className='like-container'>
-        <span onClick={() => likeClickHandler(comment._id)}>
+        <span onClick={() => likeClickHandler(comment._id)} className='like'>
           {isLike ? (
             <i className='fa-solid fa-heart'></i>
           ) : (
